@@ -1,7 +1,7 @@
 <html>
 <head>
-<meta HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=shift_jis">
-<title>�v�Z����II/���l��͊w(2012��)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>計算数理II/数値解析学(2012夏)</title>
 <meta name="Author" content="Norikazu Saito">
 <link REL="stylesheet" TYPE="text/css" HREF="saito.css">
 </head>
@@ -9,134 +9,134 @@
 <body>
 
 
-2012�N��, ��2, 10:40-12:10
+2012年夏, 木2, 10:40-12:10
 
 <p>
 
-<h1>�v�Z����II <����128����, ���w��4�N> </h1>
+<h1>計算数理II <数理128教室, 数学科4年> </h1>
 
-<h1>���l��͊w <����128����, ��w�@�����Ȋw������> </h1>
+<h1>数値解析学 <数理128教室, 大学院数理科学研究科> </h1>
 
 
-<h4>�V���o�X</h4>
+<h4>シラバス</h4>
 
 <p>
 
 <ul>
-<li><b>���Ƃ̖ڕW�ƊT�v�F</b>
-�R���s���[�^��p�������l�I��͕��@�́C���H�w�𒴂��āC�����Ȋw�C�Տ���w�C���Z���i�����Ȃǂɂ܂ŉ��p�͈͂��g���C���L���L�v�Ȓm���������炵�Ă���D�����āC���G����K�͂Ȗ��̃R���s���[�^�ɂ��V�~�����[�V�������\�ɂȂ�C���s�����ɂ�C����Ɋւ�鐔�w�I�����̉����ւ̗v���͋����Ȃ�D���ہC�V�~�����[�V�����́C�R���s���[�^�̓����Ŋ���������̂ł͂Ȃ��C���ۂ̃��f���i�����������Ȃǁj���C���f���̐��w��́C�ߎ��Ɨ��U���C�A���S���Y���̎����ƃv���O�����̍쐬�C�f�[�^�̉����C�����f�[�^�Ƃ̏Ƃ炵���킹�C�M�����̌��؂Ȃǂ̈�A�̉ߒ��ł���C����炪�����Ƃ������ŋ����q�����Ă���̂ł���D�{�u�`�ň����̂́C��L�́u�ߎ��Ɨ��U���v�̕����ł���D���Ȃ킿�C�l�X�ȕ������ۂ̋L�q�Ɍ����Δ�����������Ώۂɂ��āC���l�I���@�Ɋ�Â��ߎ���@�Ƃ��̐��w���_�̊T�v���������D���l�I���@�Ƃ��ẮC�����ɍ����@(finite difference method, FDM)�ƗL���v�f�@(finite element method, FEM)��ΏۂƂ���D
+<li><b>授業の目標と概要：</b>
+コンピュータを用いた数値的解析方法は，理工学を超えて，生命科学，臨床医学，金融商品研究などにまで応用範囲を拡げ，幅広く有益な知見をもたらしている．そして，複雑かつ大規模な問題のコンピュータによるシミュレーションが可能になり，実行されるにつれ，それに関わる数学的諸問題の解決への要請は強くなる．実際，シミュレーションは，コンピュータの内部で完結するものではなく，現象のモデル（微分方程式など）化，モデルの数学解析，近似と離散化，アルゴリズムの実装とプログラムの作成，データの可視化，現実データとの照らし合わせ，信頼性の検証などの一連の過程であり，それらが数理という幹で強く繋がっているのである．本講義で扱うのは，上記の「近似と離散化」の部分である．すなわち，様々な物理現象の記述に現れる偏微分方程式を対象にして，数値的方法に基づく近似解法とその数学理論の概要を解説する．数値的方法としては，おもに差分法(finite difference method, FDM)と有限要素法(finite element method, FEM)を対象とする．
 </li>
-<li><b>���e�F</b>
+<li><b>内容：</b>
 <ol>
-<li>�M������</li>
-<li>�M�������̍����ߎ�(�z�I�X�L�[���ƉA�I�X�L�[��)</li>
-<li>�M�������̍����ߎ�(�V�[�^�X�L�[���Ɣ�Ď����)</li>
-<li>�����@�̎������</li>
-<li>Neumann���E����</li>
-<li>�����`�����g�U������</li>
-<li>�ϕ������ƗL���v�f�@</li>
-<li>Sobolev��ԂƎ�`��</li>
-<li>�����ȎO�p�`����</li>
-<li>�L���v�f�@�̎������</li>
-<li>�ő�l����</li>
-<li>FreeFem++�ɂ�鐔�l�v�Z�i��b�ҁj</li>
-<li>FreeFem++�ɂ�鐔�l�v�Z�i����^���j</li>
-<li>Lax-Milgram�̗��_</li>
-<li>Galerkin�ߎ�</li>
+<li>熱方程式</li>
+<li>熱方程式の差分近似(陽的スキームと陰的スキーム)</li>
+<li>熱方程式の差分近似(シータスキームと非斉次問題)</li>
+<li>差分法の収束解析</li>
+<li>Neumann境界条件</li>
+<li>半線形反応拡散方程式</li>
+<li>変分原理と有限要素法</li>
+<li>Sobolev空間と弱形式</li>
+<li>正則な三角形分割</li>
+<li>有限要素法の収束解析</li>
+<li>最大値原理</li>
+<li>FreeFem++による数値計算（基礎編）</li>
+<li>FreeFem++による数値計算（非線型問題）</li>
+<li>Lax-Milgramの理論</li>
+<li>Galerkin近似</li>
 </ol>
 </li>
-<li><b>�Q�l���F</b>
+<li><b>参考書：</b>
 <ol>
-<li>�e�n���Y�E�R�{���G�F�����������ƌv�Z�@���K�C�R�C��, 1991�N�D</li>
-<li>�c�[���v�F�����������̐��l��@II�C��g���X, 1990�N�D</li>
+<li>菊地文雄・山本昌宏：微分方程式と計算機演習，山海堂, 1991年．</li>
+<li>田端正久：微分方程式の数値解法II，岩波書店, 1990年．</li>
 <li>G. D. Smith: Numerical Solution of Partial Differential Equations,
 Oxford University Press, 1965. </li>
 <li> S. Larsson and V. Thomee: Partial Differential Equations with Numerical Methods, Springer, 2009.</li>
 </ol>
 </li>
 
-<li><b>���ѕ]���F</b><font color ="red">���|�[�g</font></li>
+<li><b>成績評価：</b><font color ="red">レポート</font></li>
 
-<li><b>�������ޔԍ��F</b>551</li>
+<li><b>数理分類番号：</b>551</li>
 </ul>
 
-<h4>���ƋL�^(�z�z����)</h4>
+<h4>授業記録(配布物等)</h4>
 <p>
 <ul>
-<li>��1��(4/5)</li>
+<li>第1回(4/5)</li>
 <ul>
-<li>���Ƃ̐����i<!a href = "http://www.infsup.jp/saito/materials/120405pde_guide.pdf" target = top>�z�z����</a>�j</li>
-<li>���l��͂̈Ӌ`�Ɩ���</li>
-<li><b>I. �M�������ɑ΂��鍷���@</b></li>
-<li>1. �M�������i�����l���E�l���C�ő�l�����Ɖ��̈�Ӑ��CFourier�̕��@�Ɖ��̍\���CDuhamel�̌����j</li>
+<li>授業の説明（<!a href = "http://www.infsup.jp/saito/materials/120405pde_guide.pdf" target = top>配布資料</a>）</li>
+<li>数値解析の意義と役割</li>
+<li><b>I. 熱方程式に対する差分法</b></li>
+<li>1. 熱方程式（初期値境界値問題，最大値原理と解の一意性，Fourierの方法と解の構成，Duhamelの原理）</li>
 </ul>
-<li>��2��(4/19)</li>
+<li>第2回(4/19)</li>
 <ul>
-<li>2. �M�������̍����ߎ��F(a)�����ߎ��C(b)�z�I�X�L�[���C(c)�P���A�I�X�L�[��</li>
-<li><!a href = "http://www.infsup.jp/saito/materials/120419heat_example.pdf" target = top>�z�z����</a></li>
+<li>2. 熱方程式の差分近似：(a)差分近似，(b)陽的スキーム，(c)単純陰的スキーム</li>
+<li><!a href = "http://www.infsup.jp/saito/materials/120419heat_example.pdf" target = top>配布資料</a></li>
 </ul>
-<li>��3��(4/26)</li>
+<li>第3回(4/26)</li>
 <ul>
-<li>2. �M�������̍����ߎ��F(d)�A�I\theta�X�L�[���C(e)��Ď��������C(f)�A���ꎟ������</li>
-<li><!a href = "http://www.infsup.jp/saito/materials/120426heat_example.pdf" target = top>�z�z����</a></li>
+<li>2. 熱方程式の差分近似：(d)陰的\thetaスキーム，(e)非斉次方程式，(f)連立一次方程式</li>
+<li><!a href = "http://www.infsup.jp/saito/materials/120426heat_example.pdf" target = top>配布資料</a></li>
 </ul>
-<li>��4��(5/10)</li>
+<li>第4回(5/10)</li>
 <ul>
-<li>3. �����ƌ덷�]���F(a)\ell^\infty�덷��́i�덷�̕\���C�c���̕]���C�덷�]���j</li>
-<li><!a href = "http://www.infsup.jp/saito/materials/120510heat_example.pdf" target = top>�z�z����</a></li>
+<li>3. 収束と誤差評価：(a)\ell^\infty誤差解析（誤差の表現，残差の評価，誤差評価）</li>
+<li><!a href = "http://www.infsup.jp/saito/materials/120510heat_example.pdf" target = top>配布資料</a></li>
 </ul>
-<li>��5��(5/17)</li>
+<li>第5回(5/17)</li>
 <ul>
-<li>(b)\ell^2�덷��́i�ŗL�l���j</li>
-<li>4. Neumann���E����</li>
+<li>(b)\ell^2誤差解析（固有値問題）</li>
+<li>4. Neumann境界条件</li>
 </ul>
-<li>��6��(5/24)</li>
+<li>第6回(5/24)</li>
 <ul>
-<li>5. ����`�g�U�������i�����C���̑Q�ߋ����C�����@�C���萫�C�����j</li>
+<li>5. 非線形拡散方程式（定常解，解の漸近挙動，差分法，安定性，収束）</li>
 </ul>
-<li>��7��(5/31)</li>
+<li>第7回(5/31)</li>
 <ul>
-<li><b>II. �L���v�f�@�ƕϕ�����</b></li>
-<li>6. �ϕ������iPoisson�������C�ϕ������CRitsz�ߎ��CGalerkin�ߎ��j</li>
-<li>7. �L���v�f�@�i�O�p�`�����C�W���I���j</li>
+<li><b>II. 有限要素法と変分原理</b></li>
+<li>6. 変分原理（Poisson方程式，変分原理，Ritsz近似，Galerkin近似）</li>
+<li>7. 有限要素法（三角形分割，標準的基底）</li>
 </ul>
-<li>��8��(6/7)</li>
+<li>第8回(6/7)</li>
 <ul>
-<li><font color = "red">�x�u</font></li>
+<li><font color = "red">休講</font></li>
 </ul>
-<li>��9��(6/14)</li>
+<li>第9回(6/14)</li>
 <ul>
-<li>8. Sobolev���(H^1���, H^1_0��ԁC�g���[�X�C
-Poincare�̕s�����CSobolev�̕s�����CRellich�̒藝�CWirtinger�̕s����)</li>
+<li>8. Sobolev空間(H^1空間, H^1_0空間，トレース，
+Poincareの不等式，Sobolevの不等式，Rellichの定理，Wirtingerの不等式)</li>
 </ul>
-<li>��10��(6/21)</li>
+<li>第10回(6/21)</li>
 <ul>
-<li>9. ����Ɛ������iRiesz�̕\���藝�C��`���C���̐������CGalerkin�ߎ��CGalerkin���𐫁CCea�̕��j</li>
+<li>9. 弱解と正則性（Rieszの表現定理，弱形式，解の正則性，Galerkin近似，Galerkin直交性，Ceaの補題）</li>
 </ul>
-<li>��11��(6/28)</li>
+<li>第11回(6/28)</li>
 <ul>
-<li>10. �����ȎO�p�`�����i�Ǐ��I��Ԍ덷�C�O�p�`�����̐������CZamal�̍ŏ��p�����C���I��Ԍ덷�C�Q�Ɨv�f�j</li>
+<li>10. 正則な三角形分割（局所的補間誤差，三角形分割の正則性，Zamalの最小角条件，大域的補間誤差，参照要素）</li>
 </ul>
-<li>��12��(7/5)</li>
+<li>第12回(7/5)</li>
 <ul>
-<li>10. �����ȎO�p�`�����i�Ǐ��I��Ԍ덷�藝�̏ؖ��j</li>
-<li>11. �L���v�f�@�̌덷��́i�������CH^1�덷�]���CL^2�덷�]���j</li>
-<li><!a href = "http://www.infsup.jp/saito/materials/pde12ex.pdf" target = top>���|�[�g���</a>�i���ߐ؂�F�W���Q�X���j</li>
+<li>10. 正則な三角形分割（局所的補間誤差定理の証明）</li>
+<li>11. 有限要素法の誤差解析（収束性，H^1誤差評価，L^2誤差評価）</li>
+<li><!a href = "http://www.infsup.jp/saito/materials/pde12ex.pdf" target = top>レポート問題</a>（締め切り：８月２９日）</li>
 </ul>
-<li>��13��(7/12)</li>
+<li>第13回(7/12)</li>
 <ul>
-<li>FreeFem++�̎���</li>
+<li>FreeFem++の実演</li>
 </ul>
-<li>��14��(7/19)</li>
+<li>第14回(7/19)</li>
 <ul>
-<li><font color ="red">�x�u</font></li>
+<li><font color ="red">休講</font></li>
 </ul>
 </ul>
 
 
 <p>
 
-<font color = "red">���̍u�`�͏I�����܂����B</font>
+<font color = "red">この講義は終了しました。</font>
 
 <p>
 
