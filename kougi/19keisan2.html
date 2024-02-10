@@ -1,0 +1,169 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>計算数理II（数学科4年）・数値解析学（大学院数理科学研究科）</title>
+<meta name="Author" content="Norikazu Saito">
+<link REL="stylesheet" TYPE="text/css" HREF="mine.css">
+</head>
+<body>
+
+  <!-- 学期 -->
+  <div>
+<p Align="right">2019年度 Sセメスター</p>
+
+<h3>計算数理II（数学科4年）・数値解析学（大学院数理科学研究科）</h3>
+
+
+<ul>
+<li><b>担当：</b><a href ="http://www.infsup.jp/saito" target="_blank">齊藤宣一</a>（数理科学研究科）</li>
+<li><b>曜日時間：</b>木曜日・2限</li>
+<li><b>場所：</b>数理棟118室</li>
+</ul>
+
+
+<h4>講義資料</h4>
+
+<p>
+この講義で配布する資料はすべて<a href = "https://itc-lms.ecc.u-tokyo.ac.jp/" target =target="_blank">ITC-LMS</a>からダウンロードできます。履修届け提出後に，履修する科目は自動的に受講登録されます。</font>
+
+
+<h4>シラバス</h4>
+
+<p>
+
+<ul>
+<li><b>授業の目標と概要：</b>
+コンピュータを用いた数値的解析方法は，理工学を超えて，生命科学，臨床医学，金融商品研究などにまで応用範囲を拡げ，幅広く有益な知見をもたらしている．そして，複雑かつ大規模な問題のコンピュータによるシミュレーションが可能になり，実行されるにつれ，それに関わる数学的諸問題の解決への要請は強くなる．実際，シミュレーションは，コンピュータの内部で完結するものではなく，現象のモデル（微分方程式など）化，モデルの数学解析，近似と離散化，アルゴリズムの実装とプログラムの作成，データの可視化，現実データとの照らし合わせ，信頼性の検証などの一連の過程であり，それらが数理という幹で強く繋がっているのである．本講義で扱うのは，上記の「近似と離散化」の部分である．すなわち，様々な物理現象の記述に現れる偏微分方程式を対象にして，数値的方法に基づく近似解法とその数学理論の概要を解説する．なお，具体的な近似方法としては，おもに差分法と有限要素法を取り上げる． 
+</li>
+
+<li><b>キーワード</b>
+数値解析、偏微分方程式、差分法、有限要素法</li>
+
+<li><b>内容：</b></li>
+<ol>
+<li> 熱方程式</li>
+<li> 陽的差分法</li>
+<li> 陰的差分法</li>
+<li> 収束と誤差解析</li>
+<li> Neumann境界条件</li>
+<li> 非線形問題</li>
+<li> 変分原理とPoisson方程式</li>
+<li> 有限要素法</li>
+<li> 関数解析の準備</li>
+<li> 弱解と正則性</li>
+<li> 正則な三角形分割</li>
+<li> 有限要素法の誤差解析</li>
+<li> 半線形楕円型方程式</li>
+<li> Lax-Milgramの理論</li>
+<!--<li> Galerkin近似</li>-->
+</ol>
+<li><b>参考書：</b>
+<ol>
+<li> 田端正久：偏微分方程式の数値解析，岩波書店, 2010年．</li>
+<li>菊地文雄，齊藤宣一：数値解析の原理―現象の解明をめざして (岩波数学叢書)，岩波書店，2016年</li>
+<li> K. W. Morton and D. F. Mayers: Numerical Solution of Partial
+Differential Equations (2nd ed.), Cambridge University Press, 2005.</li>
+<li> G. D. Smith: Numerical Solution of Partial Differential Equations,
+  Oxford University Press, 1965.</li>
+<li>D. Furihata and T. Matsuo: Discrete Variational Derivative Method: A Structure-Preserving Method for Partial Differential Equations,
+CRC Press, 2011. </li>
+<li>菊地文雄・山本昌宏：微分方程式と計算機演習，山海堂, 1991年</li>
+</ol>
+
+<li><b>成績評価：</b><font color ="red">レポート</font></li>
+
+<li><b>数理分類番号：</b>551</li>
+</ul>
+</li>
+
+<h4>授業記録</h4>
+<p>
+<ul>
+
+<li>第1回(4/11)</li>
+<ul>
+<li>授業の説明</li>
+<li>General Information and Introduction</li>
+<li>1. Heat equation</li>
+</ul>
+
+<li>第2回(4/18)</li>
+<ul>
+<li>2. Explicit finite difference scheme: 2.1. Finite difference quotients, 2.2. Explicit finite difference scheme, 2.3. Numerical examples </li>
+<li>3. Implicit finite difference schemes: 3.1. Simple implicit scheme</li>
+</ul>
+
+<li>第3回(4/25)</li>
+<ul>
+<li>3. Implicit finite difference schemes: 3.2. Implicit $\theta$ scheme, 3.3. Inhomogeneous equations</li>
+<li>4. Convergence and error estimates: 4.1. l^infty analysis</li>
+</ul>
+
+<li>第4回(5/9)</li>
+<ul>
+<li>4. Convergence and error estimates: 4.1. l^infty analysis, 4.2. l^2 analysis</li>
+<li>5. Neumann boundary condition</li>
+</ul>
+
+<li>第5回(5/16)</li>
+<ul>
+<li>Implementation of FDM for heat equations using MATLAB</li>
+<li>6. Cahn-Hilliard equation: explicit scheme, free energy and boundedness of the solution, discrete variational derivative method</li>
+</ul>
+
+<li>第6回(5/23)</li>
+<ul>
+<li>6. Cahn-Hilliard equation: discrete variational derivative method, Furihata-Onda-Mori scheme</li>
+<li>7. Variational formulation for the Poisson equation: Poisson equation, variational problem, Euler-Lagrange equation</li>
+</ul>
+
+<li>第7回(5/30)</li>
+<ul>
+<li>7. Variational formulation for the Poisson equation: Galerkin-Ritz approximation</li>
+<li>8. Finite element approximation</li>
+<li>9. Review of Functional Analysis: continuous functions, L^2 space, H^1 space</li>
+</ul>
+
+<li>第8回(6/6)</li>
+<ul>
+<li>9. Review of Functional Analysis: H^2 space, H^1_0 space, Lipschitz domain, C^0 domain, Density Lemma, Poincare's inequality, Sobolev inequality, Trace Theorem, a characterization of H^1_0 space, Poincare-Wirtinger's inenquality, Riesz's Representation Theorem</li>
+<li>10. Weak solution and regularity: Poisson equation, weak formulation, weak solution, elliptic regularity</li>
+</ul>
+
+<li>第9回(6/13)</li>
+<ul>
+<li>10. Weak solution and regularity: Galerkin approximation</li>
+<li>11. Shape-regularity of triangulations: local interpolation error, shape-regularity, global interpolation error</li>
+</ul>
+
+<li>第10回(6/20)</li>
+<ul>
+<li><font color="red">canceled</font></li>
+</ul>
+
+<li>第11回(6/27)</li>
+<ul>
+<li>12. Error analysis of the finite element method: convergence, H^1 error estimate, L^2 error estimate</li>
+</ul>
+
+<li>第12回(7/4)</li>
+<ul>
+<li>13. Freefem++</li>
+<li>14. Lax-Milgram theory</li>
+</ul>
+
+<li>第13回(7/11)</li>
+<ul>
+<li></li>
+</ul>
+
+</ul>
+
+<p>
+  
+<!--
+<font color ="red">この講義は終了しました．</font>
+-->
+</div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>計算数理II（数学科4年）・数値解析学（大学院数理科学研究科）</title>
+<meta name="Author" content="Norikazu Saito">
+<link REL="stylesheet" TYPE="text/css" HREF="mine.css">
+</head>
+<body>
+
+<!-- 学期 -->
+<Div Align="left">2016年度 Sセメスター</Div>
+
+<h3>計算数理II（数学科4年）・数値解析学（大学院数理科学研究科）</h3>
+
+
+<ul>
+<li><b>担当：</b><a href ="http://www.infsup.jp/saito" target="_blank">齊藤宣一</a>（数理科学研究科）</li>
+<li><b>曜日時間：</b>木曜日・2限</li>
+<li><b>場所：</b>数理棟122室</li>
+</ul>
+
+
+<h4>講義資料</h4>
+
+<p>
+この講義で配布する資料はすべて<a href = "https://itc-lms.ecc.u-tokyo.ac.jp/" target =target="_blank">ITC-LMS</a>からダウンロードできます。履修届け提出後に，履修する科目は自動的に受講登録されます。</font>
+
+
+<h4>シラバス</h4>
+
+<p>
+
+<ul>
+<li><b>授業の目標と概要：</b>
+コンピュータを用いた数値的解析方法は，理工学を超えて，生命科学，臨床医学，金融商品研究などにまで応用範囲を拡げ，幅広く有益な知見をもたらしている．そして，複雑かつ大規模な問題のコンピュータによるシミュレーションが可能になり，実行されるにつれ，それに関わる数学的諸問題の解決への要請は強くなる．実際，シミュレーションは，コンピュータの内部で完結するものではなく，現象のモデル（微分方程式など）化，モデルの数学解析，近似と離散化，アルゴリズムの実装とプログラムの作成，データの可視化，現実データとの照らし合わせ，信頼性の検証などの一連の過程であり，それらが数理という幹で強く繋がっているのである．本講義で扱うのは，上記の「近似と離散化」の部分である．すなわち，様々な物理現象の記述に現れる偏微分方程式を対象にして，数値的方法に基づく近似解法とその数学理論の概要を解説する．なお，具体的な近似方法としては，おもに差分法と有限要素法を取り上げる． 
+</li>
+
+<li><b>キーワード</b></li>
+数値解析、偏微分方程式、差分法、有限要素法
+
+<li><b>内容：</b></li>
+<ol>
+<li> 熱方程式</li>
+<li> 差分法</li>
+<li> 差分法の収束解析</li>
+<li> Neumann境界条件</li>
+<li> 半線形反応拡散方程式</li>
+<li> 変分原理</li>
+<li> 有限要素法</li>
+<li> 関数解析の準備</li>
+<li> 弱解と正則性</li>
+<li> 正則な三角形分割</li>
+<li> 有限要素法の収束解析</li>
+<li> FreeFem++による数値計算</li>
+<li> Lax-Milgramの理論</li>
+<li> Galerkin近似</li>
+</ol>
+<li><b>参考書：</b></li>
+<ol>
+<li> 田端正久：偏微分方程式の数値解析，岩波書店, 2010年．</li>
+<li> K. W. Morton and D. F. Mayers: Numerical Solution of Partial
+Differential Equations (2nd ed.), Cambridge University Press, 2005.</li>
+<li> G. D. Smith: Numerical Solution of Partial Differential Equations,
+Oxford University Press, 1965.</li>
+<li> 山口昌哉(編)：数値解析と非線形現象，日本評論社，1996年(オリジナルは
+1981年)</li>
+<li> 菊地文雄・山本昌宏：微分方程式と計算機演習，山海堂, 1991年</li>
+</ol>
+
+<li><b>成績評価：</b><font color ="red">レポート</font></li>
+
+<li><b>数理分類番号：</b>551</li>
+</ul>
+
+<h4>授業記録(配布物等)</h4>
+<p>
+<ul>
+<li>第1回(4/7)</li>
+<ul>
+<li>授業の説明</li>
+<li>1. 熱方程式（熱方程式，境界条件，初期条件，古典解，最大値の原理）</li>
+</ul>
+<li>第2回(4/14)</li>
+<ul>
+<li>2. 陽的差分スキーム（差分近似，陽的スキーム，数値例）</li>
+<li>3. 陰的差分スキーム（単純陰的スキーム）</li>
+<!--
+<li><!a href = "http://www.infsup.jp/saito/materials/150416pde_example.pdf" target = "_blank">配布資料</a></li>
+-->
+</ul>
+<li>第3回(4/21)</li>
+<ul>
+<li>3. 陰的差分スキーム（陰的thetaスキーム，非斉次問題）</li>
+<li>4. 収束性と誤差評価</li>
+<!--
+<li>Scilabによる熱方程式の差分解法（<!a href = "http://www.infsup.jp/saito/materials/fdm_scilab15a.pdf" target = "_blank">配布資料</a>）</li>
+-->
+</ul>
+<li>第4回(4/28)</li>
+<ul>
+<li>4. 収束性と誤差評価</li>
+<li>数値計算の方法</li>
+</ul>
+<li>第5回(5/12)</li>
+<ul>
+<li>5. 非線形拡散方程式</li>
+<li>6. 補足：6.1 非斉次Dirichlet境界条件</li>
+</ul>
+<li>第6回(5/19)</li>
+<ul>
+<li>6.2 Neumann境界条件</li>
+<li>7. Poisson方程式の変分法的な表現（Poisson方程式，Dirichletの原理）</li>
+</ul>
+<li>第7回(5/26)</li>
+<ul>
+<li>7. Poisson方程式の変分法的な表現（Ritz近似，Galerkin近似）</li>
+<li>8. 有限要素法（三角形分割，重心座標，区分一次要素）</li>
+</ul>
+<li>第8回(6/2)</li>
+<ul>
+<li>9. 関数解析の準備（Rellichの定理，Sobolevの不等式，Poincareの不等式，Poincare-Wirtingerの不等式，トレース定理，H^1_0の特徴付け，Rieszの表現定理）</li>
+</ul>
+<li>第9回(6/9)</li>
+<ul>
+<li>10. 弱解と正則性（Poisson方程式の弱解，解の正則性，Galerkin近似，Galerkin直交性，Ceaの補題）</li>
+<li>11. 正則な三角形分割（局所補間誤差，分割の正則性，Zlamalの最小角条件，大域的補間誤差）</li>
+</ul>
+<li>第10回(6/16)</li>
+<ul>
+<li>11. 正則な三角形分割（局所補間誤差の証明）</li>
+<li>12. 有限要素法の誤差評価（収束性，H^1誤差評価，L^2誤差評価）</li>
+<!--
+<li><a href = "http://www.infsup.jp/saito/materials/pde15prob.pdf" target = "_blank">レポート問題</a></li>
+-->
+</ul>
+<li>第11回(6/23)</li>
+<ul>
+<li><font color = "red">休講</font></li>
+</ul>
+<li>第12回(6/30)</li>
+<ul>
+<li>13. Lax-Milgramの定理</li>
+<li>Freefem++による数値計算</li>
+</ul>
+<li>第13回(7/7)</li>
+<ul>
+  <li><font color = "red">休講</font></li>
+  </ul>
+</ul>
+
+<p>
+
+<font color = "red">この講義は終了しました．</font>
+
+</body>
+</html>

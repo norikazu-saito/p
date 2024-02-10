@@ -1,0 +1,190 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>計算数理I（数学科）・計算数理（統合自然科学科）</title>
+<meta name="Author" content="Norikazu Saito">
+<link REL="stylesheet" TYPE="text/css" HREF="mine.css">
+</head>
+<body>
+
+<div>
+<!-- 学期 -->
+<p Align="right">2022年度 Sセメスター</p>
+
+
+
+<h3>計算数理I（数学科3年）・計算数理（統合自然科学科3年）</h3>
+
+
+<ul>
+<li><b>担当：</b><a href ="http://www.infsup.jp/saito" target="_blank">齊藤宣一</a>（数理科学研究科）</li>
+<li><b>曜日時間：</b>金曜日・2限</li>
+<li><b>場所：</b>数理科学研究科棟 XXX室<font color="#ff1493">（本講義は，対面での開講を予定しています）</font></li>
+</ul>
+
+
+<h4>重要な注意</h4>
+
+<p>
+
+  <ul>
+    <li>
+      本講義は、数理科学研究科棟での、<font color="#fc8c00">対面・オンライン併用型A（総時間数の半数以上を対面で実施）</font>での開講を予定しています。
+
+  <ul>
+    <li>第1回（4月8日）は、オンライン（オンデマンド方式）で行います。</li>
+    <li>第2回目以降（4月15日〜）は、教室での講義を行います。</li>
+  </ul>
+  </li>
+
+    <li>第2回目以降は、受講生は、教室に来て対面方式で講義を受けることを原則とします。一方で、講義の全回数分のオンライン（オンデマンド方式）教材の用意もします。したがって、本講義をオンライン講義として受講することも可能です。ただし、オンライン（オンデマンド方式）とは以下の方式を意味します。
+    <ol>
+  <li>講義日程にあわせて、<font color="#4169e1">講義ノート</font>、<font color="#4169e1">講義を録画した動画視聴URL</font>を<a href ="https://itc-lms.ecc.u-tokyo.ac.jp/" target="_blank">ITC-LMS</a>の『教材』に公開する（これらは、第n回につき一つずつである。動画はYoutubeにおける限定公開の形で公開する）。</li>
+  <li>受講生は、それらを用いて学習する。講義slackで質問ができる。
+    </li>
+    </ol>
+
+    <li>対面で講義を受ける受講生も、ITC-LMSで、オンライン講義用の教材を参照することが可能です。また、講義の時間帯以外に、講義slackで質問ができます。</li>
+
+<li>講義を、（Zoomなどで）リアルタイムのストリーミング配信することはしません。</li>
+
+<li> COVID-19の感染状況拡大次第では、全面的にオンライン講義（オンデマンド方式）になる可能性があります。</li>
+  </ul>
+
+  【ここまで2月19日に記載】
+
+<h4>お知らせ</h4>
+
+<p>
+
+ <ul>
+    <li>2020年度の計算数理I・計算数理は、オンライン授業等における<a href="https://www.u-tokyo.ac.jp/ja/students/classes/online-hybrid-good-practices.html" target="_blank">グッドプラクティス総長表彰</a>を受けました。インタビュー記事が、東京大学<a href="https://utelecon.github.io/" target="_blank">オンライン授業・Web会議 ポータルサイト</a>
+      の<a href="https://utelecon.github.io/good-practice/" target="_blank">グッドプラクティスの共有</a>に掲載されています。</li>
+    </ul>
+ 
+
+
+
+<h4>シラバス</h4>
+
+<p>
+
+<ul>
+<li><b>授業の目標・概要</b></li>
+線形代数学では、正則な行列を係数行列とする連立一次方程式は、一意な解を持ち、それはクラメールの公式を用いて表現できることを学んだ。しかし、もし、クラメールの公式をそのまま用いて、未知数が30個の連立一次方程式を解こうとすれば、現在利用できる最も速いスーパーコンピュータを用いても、100億年以上かかる見積もりになってしまい、現実的でない。一方、それをガウスの消去法で求めれば、手頃なラップトップ型パーソナルコンピュータを用いても、 1/100秒もかからない。このように、数学的に解が表現できる、あるいは解が存在するということと、実際に数値を得ることの間には、大きな溝があるのである。数学的な概念や方法を通じて、現実問題を研究する際には、当然、数値的な答えが要求される。そのような問題に対処するために、様々な数学的な概念を、具体的に数値を計算するという立場から研究する分野を数値解析と言う。本講義は、数値解析への入門を目的とし、1年および2年次に学んだ微分積分学や線形代数学に現れる諸問題、例えば、連立一次方程式、非線形方程式、定積分、常微分方程式、最適化（関数の最小化）などを、コンピュータを用いて数値的に解くための方法とその背景にある数学理論の解説を行う。
+<br>
+
+<li><b>キーワード</b>
+数値解析、連立方程式、非線型方程式、数値積分、常微分方程式</li>
+
+<li><b>授業内容</b>
+<ol>
+<li>数値計算と数学，計算機における数の表現</li>
+<li>非線形方程式：Newton法</li>
+<li>非線形方程式：多変数Newton法と代数方程式</li>
+<li>行列のノルム</li>
+<li>固有値問題：固有値の包み込みとRayleigh商</li>
+<li>固有値問題：冪乗法，逆反復法，シフト法</li>
+<li>補間多項式と数値積分：Lagrange補間多項式とNewton-Cotes積分公式</li>
+<li>補間多項式と数値積分：直交多項式とGauss型積分公式</li>
+<li>常微分方程式：Euler法と一段法</li>
+<li>常微分方程式：Runge-Kutta法</li>
+<li>常微分方程式：連立系への適用</li>
+<li>関数の最良近似</li>
+<li>無制約最適化とその応用</li>
+</ol>
+</li>
+
+
+
+<li><b>参考書</b>
+<ul>
+<li>齊藤宣一：<a href ="http://www.utp.or.jp/bd/978-4-13-062959-1.html" target="_blank">数値解析入門 （大学数学の入門9）</a>，東京大学出版会，2012年，3,150円</li>
+<li>齊藤宣一：<a href ="http://www.kyoritsu-pub.co.jp/bookdetail/9784320111905" target="_blank">数値解析 （共立講座数学探求）</a>，共立出版，2017年</li>
+<li>A. Quarteroni, F. Saleri, P. Gervasio：Scientific Computing with MATLAB and Octave, 4th edit., Springer, 2014（加古孝，千葉文浩訳，MATLABとOctaveによる科学技術計算，丸善出版，2014年）</li>
+</ul>
+
+
+
+<li><b>履修上の注意</b></li>
+<ul>
+<li><a href ="http://www.infsup.jp/saito/ns/22keisan_ex.html" target="_blank">計算数理演習</a>を併せて履修することが望ましい．</li>
+<li>本講義は，計算数理I（理学部数学科）と計算数理（教養学部統合自然科学科）の合同授業です．</li>
+</ul>
+
+
+<li><b>成績評価</b></li>
+（対面での）<font color="#ff1493">試験</font>の予定（試験期間中に，計算数理Iと計算数理で別々に試験を行います）
+
+
+<li><b>数理分類番号</b></li> 353
+</ul>
+
+
+
+
+<h4>授業予定と記録</h4>
+
+<p>
+
+<ul>
+  <li>第1回(4/8) <font color="#4169e1">ガイダンスと計算機における数の表現</font></li>
+<ul>
+  <li><font color="#ff1493">この回はオンライン（オンデマンド方式）で行います</font></li>
+  <li>講義の説明</li>
+  <li>計算機における数の表現</li>
+</ul>
+<li>第2回(4/15) <font color="#4169e1">単独非線形方程式</font></li>
+<!--
+<ul>
+<li></li>
+<li></li>
+</ul>
+-->
+<li><font color="#ff1493">（4/22休講）</font></li>
+
+<li>第3回(5/6) <font color="#4169e1">非線形方程式系</font></li>
+
+<li>第4回(5/13) <font color="#4169e1">固有値問題</font></li>
+<ul>
+<li><font color="#ff1493">注意：</font>5/13（3限）に<!a href = "http://www.infsup.jp/saito/ns/22keisan_ex.html" target =target="_blank">計算数理演習</a>はありません．</li>
+</ul>
+<li>第5回(5/20) <font color="#4169e1">Lagrange補間多項式とNewton-Cotes公式</font></li>
+
+<li>第6回(5/27) <font color="#4169e1">直交多項式とGauss型積分公式</font></li>
+
+<li>第7回(6/3)<font color="#4169e1">常微分方程式(1)</font></li>
+
+<li>第8回(6/10) <font color="#4169e1">常微分方程式(2)</font></li>
+
+<li>第9回(6/17) <font color="#4169e1">関数の最良近似</font></li>
+
+<li>第10回(6/24) <font color="#4169e1">無制約最適化(1)</font></li>
+
+<li>第11回(7/1) <font color="#4169e1">無制約最適化(2)</font></li>
+
+<li>第12回(7/8) <font color="#4169e1">無制約最適化(3)</font></li>
+
+</ul>
+
+
+<p>
+
+<!--
+注意
+</ul>
+<li>数学科：6/1は<font color = "#ff1493">休講</font>．</li>
+<li>統合自然科学科：5/17は<font color = "#ff1493">休講</font>．5/31は<font color = "#ff1493">補講日</font>．</li>
+</ul>
+-->
+
+
+<p>
+
+  <!--
+<font color ="#ff1493">この講義は終了しました．</font>
+-->
+
+</div>
+</body>
+</html>

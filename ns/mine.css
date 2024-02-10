@@ -1,0 +1,84 @@
+body{
+background-color:#f0f8ff;
+text-color:#000000;
+font-size:12pt; 
+font-family:Verdana, Arial, "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", sans-serif;
+}
+
+div {
+  background: #ffffff;
+  width: 80%;
+  padding: 10px;
+  margin: 30px auto;
+}
+
+a:link { color:#191970 }
+a:active { color:#191970 }
+a:visited { color:#191970}
+a:hover { font-size:100%; font-weight:bold; color:#00bfff;}
+a {text-decoration:none; border-bottom:1px #0000cd dotted;}
+
+
+h1{
+font-weight:bold; 
+font-size:160%; 
+color:#000000; 
+margin:0 0 0 2em; 
+}
+
+h2{
+font-size: 140%;	
+margin: 2em 0 1em 0;
+border-width: 0 0 0 36pt;
+padding: 0.2em 1em;
+border-color: #87ceeb;
+border-style: solid;
+}
+
+h3{
+font-size: 100%;	
+margin: 2em 0 1.5em 0;
+border-width: 0 0 1.5pt 0;
+padding: 0.2em 1em;
+border-color: #87ceeb;
+border-style: solid;
+}
+
+h4 {
+font-size: 100%;	
+margin: 2em 0 1em 0;
+border-width: 0 0 0 12pt;
+padding: 0.2em 1em;
+border-color: #87ceeb;
+border-style: solid;
+}
+
+
+ul, ol {
+margin-top: 0;
+line-height: 180%;
+}
+
+
+img.floatL{float:left; margin-left:10%; margin-right:10px; margin-bottom:10px; vertical-align:text-top}
+
+img.floatR{float:right; margin-left:10px; margin-bottom:10px; vertical-align:text-top}
+p.clear							
+
+hr{
+margin-right:10%; 
+margin-left:0%; 
+color:#87ceeb; 
+}
+
+address {
+font-style: normal;
+border-width: 1.5pt 0 0 0;
+border-color: #87ceeb;
+border-style: solid;
+text-align: center;
+text-valign: bottom;
+}
+
+
+

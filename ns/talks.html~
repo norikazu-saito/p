@@ -1,0 +1,143 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NS PRESENTATIONS</title>
+<meta name="Author" content="Norikazu Saito">
+<link REL="stylesheet" TYPE="text/css" HREF="mine.css">
+</head>
+<body>
+
+<div>
+
+<h1>Norikazu Saito</h1>
+
+
+
+
+
+<h3>口頭発表</h3>
+
+<h4>2023年</h4>
+
+<ol>
+
+<li>井上京，
+石井匠海，齊藤宣一，重調和問題のDG法についての注意，
+<a href = "https://jsiam.org/union2023" target = "_blank">日本応用数理学会
+第19回研究部会連合発表会</a>，2023年3月8-10日，岡山理科大学（ハイブリッド開催）．
+</li>
+
+<li>
+千葉悠喜，
+齊藤宣一，
+滑らかな領域上のRobin境界値問題に対するNitsche法，
+日本数学会，
+  <a href = "https://www.mathsoc.jp/activity/meeting/tohoku23sept/index.html" target = "_blank">2023年度秋季総合分科会</a>，2023年9月20--23日，東北大学大学院理学研究科．</li>
+</li>
+
+<li>齊藤宣一，時間発展方程式の数値解析における最近の話題，
+<a href = "https://www.musashino-u.ac.jp/albums/abm.php?f=abm00026220.pdf&n=2023%E5%B9%B4%E5%BA%A6_%E6%95%B0%E7%90%86%E5%B7%A5%E5%AD%A6%E3%82%B7%E3%83%B3%E3%83%9D_%E3%83%9D%E3%82%B9%E3%82%BF%E3%83%BC.pdf" target = "_blank">武蔵野大学数理工学シンポジウム2023</a>，2023年11月16--17日，武蔵野大学有明キャンパス </li>
+
+<li>N. Saito, Variational analysis of the discontinuous Galerkin time-stepping method for parabolic equations, IFFS Seminar, November 22, 2023, University of Electronic Science and Technology of China</li>
+</ol>
+
+
+<h4>2022年</h4>
+
+<ol>
+
+<li>齊藤宣一，Lax–Milgramの定理からBanach--Necas--Babuskaの定理へ，北陸応用数理研究会2022，2022年3月19日，しいのき迎賓館，金沢．</li>
+  
+  <li>N. Saito, Well-posedness of one-dimensional models of blood flow in arteries, <a href = "https://www.wccm2022.org/index.html" target = "_blank">WCCM-APCOM 2022</a>(online), July 31--August 5, 2020, Yokohama, Japan</li>
+
+
+<li>
+井上大輔，伊藤優司，柏原崇人，齊藤宣一，吉田広顕，
+平均場ゲーム方程式のCole-Hopf変換とFictitious Play反復による数値計算，
+<a href = "https://jsiam.org/annual2022/" target = "_blank">日本応用数理学会2022年度年会</a>，2022年9月8-10日，北海道大学⾼等教育推進機構(セミ・ハイブリッド開催）</li>
+  
+  <li>齊藤宣一，Lax--Milgramとその後の70年，YN70(+δ)：西浦廉政先生の古希(+δ)記念研究集会，2022年9月21日〜22日， <a href = "http://www.asty45.jp/office/index.html" target = "_blank">札幌アスティ45</a></li>
+  
+  <li>N. Saito, The Keller--Segel system of chemotaxis, finite element method, and finite volume method (invited lecture), <!a href = "" target = "_blank">EASIAM Conference 2022</a>(online), October 15, 2022. </li>
+
+ </ol>
+    
+
+  
+<h4>2021年</h4>
+
+<ol>
+
+  <li>N. Saito, The Keller--Segel system of chemotaxis, finite element method, and finite volume method, <a href = "https://www.polyu.edu.hk/ama/NewsEvents/colloquium/" target = "_blank">Colloquium</a>(online), The Hong Kong Polytechnic University, May 17th, 2021, Hong Kong.</li>
+
+
+  <li>齊藤宣一，数値解析における様々な反例，<a href = "https://na.cs.tsukuba.ac.jp/mono/" target = "_blank">ものづくり企業に役立つ応用数理手法の研究会</a>(online)，2021年6月24日．  </li>
+
+
+  <li>N. Saito, Analysis of the finite element method for the Stokes problems with singular source terms (plenary lecture), <a href = "https://sites.google.com/view/eims-iccm-2021/home" target = "_blank">2021 EIMS International Conference on Computational Mathematics</a> (online), Ewha Institute of Mathematical Sciences (EIMS), Ewha Womans University, August 25th-27th, 2021, Korea.</li>
+
+ 
+<li>井上大輔，伊藤優司，吉田広顕，柏原崇人，齊藤宣一，Hamilton-Jacobi-Bellman方程式に対する風上差分法の収束証明，<a href = "https://annual2021.jsiam.org/" target = "_blank">日本応用数理学会2021年度年会</a> (online)，2021年9月7-9日，芝浦工業大学大宮キャンパス．</li>
+
+<li>齊藤宣一，計算モデルの正当性を保証する数理，<a href = "https://www.jst.go.jp/kisoken/crest/math-rsympo2021/index.html" target = "_blank">CREST「現代の数理科学と連携するモデリング手法の構築」成果報告公開シンポジウム</a>(online)，2021年9月23日．</li>
+  
+  <li>Daisuke Inoue, Yuji Ito, Takahito Kashiwabara, Norikazu Saito, and Hiroaki Yoshida, Model predictive mean field games for controlling multi-agent systems, <a href = "http://ieeesmc2021.org/" target = "_blank">IEEESMC2021</a>: IEEE International Conference on Systems, Man, and Cybernetics (online), October 17th-20th, 2021, Melbourne, Australia.</li>  
+
+</ol>
+
+
+<h4>2020年</h4>
+
+<ol>
+  <li><s>N. Saito, Analysis of the finite element method for the Poisson and Stokes problems with singular source terms, Minisymposium: Modeling, approximation, and analysis of partial differential equations involving singular source terms, <a href = "https://www.8ecm.si/" target = "_blank">8ECM</a>: European Congress of Mathematics, July 5-11, 2020, <a href = "https://www.hoteli-bernardin.si/mice/" target = "_blank">Congress Centre Bernardin</a>, Portorož, Slovenia. </s> [キャンセル]</li>
+</ol>
+
+<h4>2019年</h4>
+
+<ol>
+  
+  <li>齊藤宣一，Kato理論の応用としての準線型波動方程式に対する差分法の誤差解析，<!a href = "" target = "_blank">不連続Galerkin有限要素法の数学理論とその周辺：これからの展開</a>，2019年2月13-15日，<a href = "https://www.acros.or.jp/" target = "_blank">アクロス福岡</a>．</li>
+
+
+<li> N. Saito, Outlet boundary conditions for the Navier--Stokes equations, <a href="http://www.compbiomed.net/getfile.php?type=14/site_documents&id=MS21.pdf" target="_blank">MS21: New Mathematical Tools for Clinical Medicine</a>, <a href="http://www.compbiomed.net/2019/" target="_blank">The 6th International Conference on Computational and Mathematical Biomedical Engineering</a>, June 10-12, 2019, Tohoku University, Sendai, Japan</li>
+
+<li> N. Saito, Outlet boundary conditions for the Navier--Stokes equations, <!a href="" target="_blank"> Mathematics and Computation for Clinical Problems: I, II and III</a>, 
+<a href="https://iciam2019.org/index.php" target="_blank">ICIAM 2019</a>: 
+The 9th International Congress on Industrial and Applied Mathematics, 15-19 July 2019, Valencia, Spain</li>
+
+
+<li> T. Nakanishi and N. Saito, 
+Numerical analysis for radially symmetric solutions of semilinear heat equations, <!a href="" target="_blank"> Numerical approaches to blow-up in nonlinear differential equations</a>, 
+<a href="https://iciam2019.org/index.php" target="_blank">ICIAM 2019</a>: 
+The 9th International Congress on Industrial and Applied Mathematics, 15-19 July 2019, Valencia, Spain</li>
+
+
+<li>中西徹，齊藤宣一，$N$次元半線形熱方程式の球対称解に対する新しい質量集中型有限要素近似，<a href = "https://annual2019.jsiam.org/" target = "_blank">日本応用数理学会2019年度年会</a>，2019年9月3-5日，東京大学駒場Iキャンパス．</li>
+
+<li>中西徹，齊藤宣一，$N$次元半線形熱方程式の球対称解に対する新しい質量集中型有限要素近似，日本数学会，
+  <a href = "https://mathsoc.jp/meeting/kanazawa19sept/" target = "_blank">2019年度秋季総合分科会</a>，2019年9月17-20日，金沢大学角間キャンパス．</li>
+
+<li>齊藤宣一，<a href = "https://www.math.kyoto-u.ac.jp/ja/event/seminar/4148" target = "_blank">数値解析における反例</a>，<a href = "https://www.math.kyoto-u.ac.jp/ja/event/seminar/colloquium" target = "_blank">京都大学数学教室談話会</a>，2019年11月13日，京都大学理学部．</li>
+
+<li>中西徹，齊藤宣一，$N$次元半線形熱方程式の球対称解に対する新しい質量集中型有限要素近似，<a href = "http://infoshako.sk.tsukuba.ac.jp/~cam/2019/" target = "_blank">応用数学合同研究集会</a>，2019年12月12-14日，龍谷大学瀬田キャンパス．</li>
+
+
+</ol>
+
+
+
+
+
+<p>
+
+<p ALIGN="RIGHT">
+>> <a href = "talks_old.html">2018年までの口頭発表</a></p>
+
+</div>
+
+<address>
+Copyright (C) 2015 <a href="http://www.infsup.jp/saito/" target="_blank">Norikazu Saito</a> 
+</address>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>計算数理II・数値解析学/2010年夏</title>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=charset=x-sjis">
+<link REL="stylesheet" TYPE="text/css" HREF="saito.css">
+</head>
+<BODY>
+
+2010年夏, 木2, 10:40-12:10
+
+<p>
+
+<h1> 計算数理II <数理<Strike>118</Strike>122教室, 数学科4年> </h1>
+
+<p>
+
+<h1> 数値解析学 <数理<Strike>118</Strike>122教室, 大学院数理科学研究科> </h1>
+
+<p>
+
+<h4>シラバス</h4>
+
+<p>
+
+<ul>
+<li><b>授業の目標と概要：</b>
+様々な物理現象の記述に現れる偏微分方程式を対象にして、数値的方法に基づく近似解法とその数学理論の概要を解説する。
+</li>
+<li><b>内容：</b>
+<ol>
+<li>熱方程式と差分法</li>
+<li>Poisson方程式と有限要素法</li>
+<li>Lax-Milgramの定理とGalerkin法</li>
+<li>初期値問題の有理関数近似</li>
+</ol>
+</li>
+<li><b>参考書：</b>
+<ol>
+<li>菊地文雄・山本昌宏：微分方程式と計算機演習，山海堂, 1991年．</li>
+<li>田端正久：微分方程式の数値解法II，岩波書店, 1990年．</li>
+<li>G. D. Smith: Numerical Solution of Partial Differential Equations,
+Oxford University Press, 1965. </li>
+<li> S. Larsson and V. Thomee: Partial Differential Equations with Numerical Methods, Springer, 2009.</li>
+</ol>
+</li>
+
+<li><b>成績評価：</b>レポート</li>
+
+<li><b>数理分類番号：</b>551</li>
+</ul>
+
+<h4>授業記録(配布物等)</h4>
+<p>
+<ul>
+<li>第1回(4/8)：</li>
+<ul>
+<li>授業の説明（<!a href ="http://www.infsup.jp/saito/materials/100408naIIguid.pdf" target = "top">配布資料</a>）</li>
+<li><b>I. 熱方程式と差分法</b></li>
+<li>1. 熱方程式（熱方程式，初期値境界値問題，最大値原理，$L^\infty$安定性，正値性保存，Fourierの方法，Duhamelの原理）</li>
+</ul>
+<li>第2回(4/15)：</li>
+<ul>
+<li>2. 熱方程式の差分近似：(a)差分近似（前進差分商，後退差分商，中心差分商，2階中心差分商），(b)陽解法（差分スキーム，安定性，非負値性の保存，行列のノルム），(c)陰解法（差分スキーム，安定性，正値性の保存）</li>
+<li><!a href ="http://www.infsup.jp/saito/materials/100415heat_example.pdf" target = "top">配布資料</a></li>
+</ul>
+<li>第3回(4/22)：</li>
+<ul>
+<li>2. 熱方程式の差分近似：(d)$\theta$法，(e)非斉次問題</li>
+<li>3. 誤差解析：(a)$\ell^\infty$解析</li>
+<li><!a href ="http://www.infsup.jp/saito/materials/100422heat_example.pdf" target = "top">配布資料</a></li>
+</ul>
+<li>第4回(5/6)：</li>
+<ul>
+<li>3. 誤差解析：(a)$\ell^\infty$解析 (b) $\ell^2$解析</li>
+</li>
+</ul>
+<li>第5回(5/13)：</li>
+<ul>
+<li>4. Neumann境界条件</li>
+<li>5. 非線形問題：ロジスティック型半線形問題，解の漸近挙動，差分スキーム，安定性</li>
+<li><!a href ="http://www.infsup.jp/saito/materials/100513heat_example.pdf" target = "top">配布資料</a></li>
+</ul>
+<li>第6回(5/20)：</li>
+<ul>
+<li>5. 非線形問題：誤差評価</li>
+<li><b>II. 変分原理と有限要素法</b></li>
+<li>1. Dirichletの原理: Poisson方程式，汎関数最小化問題，停留条件とEulerの方程式，Dirichlet
+原理，Ritzの方法とGalerkinの方法</li>
+</li>
+</ul>
+<li>第7回(5/27)：</li>
+<ul>
+<li>2．有限要素法：三角形分割，区分一次要素，有限要素近似</li>
+<li>3．Sobolev空間：L^2空間，H^1空間，H^1_0空間，Lipschitz領域，トレース定理，Sobolevの埋込定理</li>
+<li><!a href ="http://www.infsup.jp/saito/materials/100527heat_example.pdf" target = "top">配布資料(グレイ・スコットモデルの数値計算例)</a>
+
+<li><!a href ="http://www.infsup.jp/saito/materials/triangulations.pdf" target = "top">配布資料（三角形分割の例）</a></li>
+</ul>
+<li>第8回(6/3)：</li>
+<ul>
+<li>3．Sobolev空間：Poincareの不等式，Wirtingerの不等式</li>
+<li>4．弱解と正則性：Poisson方程式の弱解，Rieszの表現定理，楕円型正則性，Galerkin近似，Galerkin直交性，Galerkin近似の最良性，Ceaの補題</li>
+</ul>
+<li>第9回(6/10)：</li>
+<ul>
+<li>5. 正則な三角形分割：局所的補間誤差，三角形分割の正則性，Zlamalの最小角条件，大域的補間誤差，区分的一次要素の近似能力</li>
+</ul>
+<li>第10回(6/17)：</li>
+<ul>
+<li>5．正則な三角形分割：局所的補間誤差の証明</li>
+<li>6. 誤差解析：H^1誤差評価</li>
+</ul>
+<li>第11回(6/24)：</li>
+<ul>
+<li>6. 誤差解析：L^2誤差評価</li>
+<li><b>III. 抽象的楕円型問題</b></li>
+<li>1. Lax-Milgramの定理：有界双線形形式、強圧性、縮小写像の原理</li>
+</li>
+</ul>
+<li>第12回(7/1)：</li>
+<ul>
+<li>2. Galerkin近似：Galerkin直交性，Ceaの定理</li>
+<li>3. 移流拡散方程式</li>
+<li><!a href ="http://www.infsup.jp/saito/materials/pde10ex.pdf" target = "top">レポート問題</a></li>
+</ul>
+<li>第13回(7/8)：</li>
+<ul>
+<li>freefem++の利用</li>
+</ul>
+<li>第14回(7/15)：<font color ="red">休講</font></li>
+<li>第15回(7/22)：<font color ="red">休講</font></li>
+</ul>
+
+
+<p>
+<font color = "red">この講義は終了しました。</font>
+
+<p>
+</BODY>

@@ -1,0 +1,116 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>応用数学XA・数物先端科学VII（2021年）</title>
+<meta name="Author" content="Norikazu Saito">
+<link REL="stylesheet" TYPE="text/css" HREF="mine.css">
+</head>
+<body>
+
+<div>
+<!-- 学期 -->
+<p Align="right">2021年度 Aセメスター</p>
+
+
+<h3>応用数学XA（理学部数学科）・数物先端科学VII（大学院数理科学研究科）</h3>
+
+
+
+<ul>
+<li><b>担当：</b><a href ="http://www.infsup.jp/saito" target="_blank">齊藤宣一</a>（数理科学研究科）</li>
+<li><b>曜日時間：</b>水曜日・2限</li>
+<li><b>場所：</b><font color=red>オンライン</font></li>
+</ul>
+
+
+<p>
+<font color ="red">このページは今後更新しません．最新情報は，ITC-LMSをご覧ください．[2021/08/26]</font>
+
+
+<h4>一般的な注意</h4>
+
+<p>
+
+  本講義は，Zoomを利用したライブ配信とオンデマンド方式を混合した形で行う．具体的には次の通りである．
+  
+  <ul>
+<li>事前に講義ノートを公開し，受講者が，それを自習していることを前提に講義を行う．新しい記号の導入（記号が多い！）や細かい式変形に時間をとられるのを避けるためである．</li>
+<li>そのため，ライブ配信は毎週は行わず，受講者が講義ノートを自習する週を設ける．</li>
+<li>受講者は数名であることが予想されるので，ライブ配信では，双方向の議論（雑談）をしながら進めたい．</li>
+<li>ライブ配信は録画して，受講者のみが，あとで復習できるようにする．</li>
+<li>スケジュールは，ITC-LMSで随時告知する．</li>
+<li>講義内で数値計算例を紹介する．その際に用いたプログラムは，原則，受講者に公開する．ただし，MATLAB，Julia，Freefem++，FEniCSなど，使用する言語・ソフトウエアは統一されていないので，我慢されたい．受講者には，これらのうち，少なくとも一つについて，自分で実行できるように環境を整え，計算を追試することをすすめる．（計算環境の構築について，私自身の経験はお伝えできますが，誰でもできるようにガイドすることはできませんので，予めご了承ください）</li>
+</ul>
+
+<p>
+  
+
+<h4>シラバス</h4>
+<p>
+<ul>
+<li><b>授業の目標と概要：</b>
+偏微分方程式の近似解法の一つである有限要素法についてのやや高度な話題，
+特に，移流拡散方程式に対する有限要素法を扱う．移流拡散方程式は，偏微分方程式論の立場からは，単なる線形楕円型方程式に過ぎないが，それを有限次元の方程式系で近似して数値計算を行うとき，拡散と移流を同時にうまく近似することは，自明なことではない．本講義では，上流近似（風上近似）や安定化法を，数学的な観点から導入し，その安定性や収束性を明らかにする．一つの主要な目標は，様々な安定化手法，
+  SUPG(streamline upwind Petrov-Galerkin)法，GLS(Galerkin least-squares）法，Douglas-Wang法の安定性・収束性証明を解説することある．Navier-Stokes方程式，Keller-Segel方程式への応用や，DG(discontinuous Galerkin)法の利用などについても紹介したい．
+有限要素法については未学習であることを前提に解説する．
+関数解析（Hilbert空間，射影定理など）とSobolev空間（H^1空間など）の初歩的な知識を前提とするが，講義内ではこれらを復習しながら利用する．プログラミングの経験の有無は問わない．
+</li>
+
+<li><b>授業計画：</b>
+<ul>
+<li>本講義の動機（移流拡散現象，数値的不安定性，上流近似，安定化）</li>
+<li>有限要素法</li>
+<li>関数解析の復習</li>
+<li>整合性と誤差評価</li>
+<li>上流有限要素法</li>
+<li>安定化有限要素法</li>
+<li>応用（Navier-Stokes方程式，Keller-Segel方程式など）</li>
+<li>補足（DG法，非定常問題など）</li>
+</ul>
+</li>
+<li><b>参考書：</b>
+  <ul>
+<li>H. Brezis, Functional Analysis, Sobolev Spaces and Partial Differential Equations, Springer, 2010.
+</li>
+<li>J. Necas, Direct Methods in the Theory of Elliptic Equations (English translation), Springer, 2011. 
+</li>
+<li>O. Pironneau, Finite Element Methods for Fluids, John Willey & Sons/Masson, 1989.</li>
+<li>A. Quarteroni, Numerical Models For Differential Problems, 3rd edition, Springer, 2017. 
+</li>
+<li>A. Quarteroni and A. Valli, Numerical Approximation of Partial Differential Equations, Springer, 2008, 1994.
+</li>
+
+</ul>
+<li><b>成績評価：</b>レポートによる．
+</ul>
+
+<!--
+<h4>授業記録</h4>
+<p>
+<ul>
+<li>第1回(10/6)：</li>
+<li>第2回(10/13)：</li>
+<li>第3回(10/20)：</li>
+<li>第4回(10/27)：</li>
+<li>第5回(11/3)：</li>
+<li>第6回(11/10)：</li>
+<li>第7回(11/17)：</li>
+<li>第8回(12/1)：</li>
+<li>第9回(12/8)：</li>
+<li>第10回(12/15)：</li>
+<li>第11回(12/22)：</li>
+<li>第12回(1/5)：</li>
+<li>第13回(1/12)：</li>
+</ul>
+-->
+
+<p>
+
+  <!--
+<font color ="red">この講義は終了しました．</font>
+-->
+
+</div>
+</body>
+</html>
+
