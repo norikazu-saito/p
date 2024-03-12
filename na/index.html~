@@ -1,0 +1,640 @@
+<html>
+
+<head>
+<title>齊藤宣一：数値解析，共立出版</title>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=utf-8">
+</head>
+
+<body>
+  
+<h1>数値解析（共立出版）サポートページ</h1>
+
+<p>
+
+ここは，
+  
+<q>齊藤宣一：数値解析（共立講座・数学探検17），共立出版，2017年</q>
+
+のサポートページです．このページの管理は，<a href="https://norikazu-saito.github.io/p/" target = "_blank">齊藤宣一</a>が行っています．
+
+<p>
+
+  <h2>注意とお願い</h2>
+
+<p>
+
+<ol>
+  <li>ここに掲載したプログラムは，いろいろな本を参考にしたり，TAとの相談で改良を重ねたりしているので，わたし自身の著作権は主張しません．しかし，<font color="red">プログラムを利用したことによる不利益については一切の責任を負えません</font>．あくまで，自己責任でご利用ください．</li>
+  <li>ここで公開されているプログラムを使って計算したが結果がおかしい，などの疑問があれば，遠慮なく齊藤（<img src="http://www.infsup.jp/saito/ns/mail_ut.png" width=250 align="bottom" alt="mail address">）までお問い合わせください．</li>
+</ol>
+
+
+<h2>正誤表</h2>
+
+<p>
+
+<a href="https://norikazu-saito.github.io/p/materials/errata.pdf" target = "_blank">正誤表</a> 
+
+
+<h2>計算例</h2>
+
+<p>
+  
+<ul>
+  <li>本書に掲載されている数値例を計算する際に使用したScilabプログラムです．<font color="red">使い方は，<a href="#id100">下</a>で説明します</font>．なお，（グラフィクスに関する細かいことは除いて）なるべく初心者にもわかりやすく書く，という趣旨で作りました．なので，あまり人に見せたくないような，鈍臭い記述が多く，とても精錬されたプログラムとはいえません．しかし，それでも，これらを公開することで経験のない読者の皆さんが自分で計算を行い，より精錬されたプログラムに自分で書き換える，という可能性を信じます．</li>
+
+
+<li> <font color="green" id="r1">注: </font> プログラムのファイル（chapter1.sceなど）をお使いのブラウザ，テキストエディタ，SciNotesで開くと，日本語の文字が正しく表示されないかも知れません．その場合は，テキストエンコーディング（文字コード）を <font color="red">Unicode (UTF-8)</font>として下さい．
+</li>
+</ul>
+
+<table width=100% border=0 cellspacing=0 cellpadding=0 bgcolor=#009966>
+<tr>
+<td>
+<table width=100% border=0 cellspacing=1>
+
+<tr bgcolor=#CCFFCC align=center>
+<td width=15% align="center">例／表／図</td>
+<td width=12% align="left">プログラム</td>
+<td width=58% align="left">コマンド</td>
+<td width=15% align="left">出力</td>
+
+<!-- Chapter 1: iteration -->
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">表1.1
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter1.sce" target="_blank">chapter1.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  [res]=newton1(func11,dfunc11,20,1e-12,4) <br> 
+  [res]=newton1(func11,dfunc11,20,1e-12,3) <br>
+  [res]=newton1(func11,dfunc11,20,1e-12,2) <br> 
+  [res]=newton1(func11,dfunc11,20,1e-12,0.5) </td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">表1.2
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter1.sce" target="_blank">chapter1.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+[res]=simp_newton1(func11,dfunc11,50,1e-12,3)<br>
+[res]=secant1(func11,20,1e-12,3,2.8)<br>
+[res]=fixed1(func11,phi1,100,1d-12,3)<br>
+[res]=fixed1(func11,phi2,10,1d-12,3) [<a href="#r1">注1</a>を見よ]</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">図1.2
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter1.sce" target="_blank">chapter1.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  [err1,err2,err3]=comparison1(func11,dfunc11)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">comp1.pdf</td>
+</tr>
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">表1.3
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter1.sce" target="_blank">chapter1.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  [pv,err]=rate1(func21,dfunc21,1,2) <br>
+  ただし，現状はセカント法で計算するので，他の方法で計算するときには，プログラムの中の指示に従って，コメントアウトをする．
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+  <td bgcolor=#FFFFFF valign="Top" align="center">表1.4，図1.4，例1.16
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter1.sce" target="_blank">chapter1.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+[xv,fx,inc,k]=td_newton([-0.5;-1.2])
+<td bgcolor=#FFFFFF valign="Top" align="left">mnew1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+  <td bgcolor=#FFFFFF valign="Top" align="center">表1.4，図1.5，例1.16
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter1.sce" target="_blank">chapter1.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+[xv,fx,inc,k]=td_newton([0.47;0.85])</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">mnew1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">表1.5，図1.6，例1.19
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter1.sce" target="_blank">chapter1.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+zz=[-2+%i,-2-%i,1,2,3+2*%i];<br>
+[k,xx]=dk1(zz, 2/5+2*%i/5, 6.18, 20)<br>
+[k,xx]=dk1(zz, 2/5+2*%i/5, 3.35, 20)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">dk1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">問題1.2
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter1.sce" target="_blank">chapter1.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+[res]=newton1(func61,dfunc61,20,1d-8,4.9)<br>
+[res]=newton1(func61,dfunc61,20,1d-8,4)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">問題1.2，図A.1
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter1.sce" target="_blank">chapter1.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  fplot(0,10,func61)<br>
+  fplot(0,5,func61)
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">fplot1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">問題1.4
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter1.sce" target="_blank">chapter1.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  [res]=newton1(func71,dfunc71,50,1d-12,0.005)
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">問題1.4，図A.2
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter1.sce" target="_blank">chapter1.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+fplot(0,0.01,func71)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">fplot1.pdf</td>
+</tr>
+
+<!-- Chapter 2: quadrature -->
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例2.1，表2.1，表2.3
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+format('v',15)<br>
+[res] = NI_order(0,2,func1,c_rect,Q1ex,10)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例2.1，表2.2，表2.3
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+format('v',15)<br>
+[res] = NI_order(0,2,func1,c_mid,Q1ex,10)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">表2.4
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+format('v',15)<br>
+[res] = NI_order(0,2,func1,c_trape,Q1ex,10)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">表2.5
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+format('v',15)<br>
+[res] = NI_order(0,2,func1,c_simps,Q1ex,10)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例2.9，表2.9(A)
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+order_plot1(0,1,func3,c_simps,Qex2)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">nc1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例2.9，表2.9(B)
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+order_plot2(0,1,func3,c_simps,Qex2)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">nc2.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例2.9，表2.10
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+order_plot3(0,1,func3,c_simps,Qex2)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">nc3.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例2.14，図2.11
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  result = output_lag2(0,4,4,func4,200)<br>
+result = output_lag2(0,4,7,func4,200)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">lag2.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例2.16，表2.7
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  [value, err]=nc1(-5,5,func5,4,Qex5)<br>
+  [value, err]=nc1(-5,5,func5,5,Qex5)<br>
+  [value, err]=nc1(-5,5,func5,6,Qex5)<br>
+  [value, err]=nc1(-5,5,func5,7,Qex5)<br>
+  [value, err]=nc1(-5,5,func5,8,Qex5)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例2.16，図2.12
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+result = output_lag2(-5,5,4,func5,200)<br>
+result = output_lag2(-5,5,12,func5,200)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">lag2.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">表2.8
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  [x,w] = gaulege(4)<br>
+  [x,w] = gaulege(5)<br>
+  [x,w] = gaulege(6)<br>
+  [x,w] = gaulege(7) [<a href="#r2" >注2</a>と<a href="#r3">注3</a>を参照]
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">問題2.2
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+integ = c_simps1(0,%pi/2,200,func7,%pi/6)<br>
+integ = c_simps1(0,%pi/2,100,func7,%pi/6)<br>
+integ = c_simps1(0,%pi/2,200,func7,%pi/4)<br>
+integ = c_simps1(0,%pi/2,100,func7,%pi/4)<br>
+integ = c_simps1(0,%pi/2,200,func7,%pi/(12))<br>
+integ = c_simps1(0,%pi/2,100,func7,%pi/(12))</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">問題2.3，図A.3
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+order_plot3(0,1,func3,c_mid,Qex2)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">nc3.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">問題2.5，表A.1
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter2.sce" target="_blank">chapter2.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+[res] = error_GC1(func51,-5,5,func5,Qex5)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+
+<!-- Chapter 3: linear equations -->
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例3.21
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter3.sce" target="_blank">chapter3.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  A=[3,-1,2;-1,4,1;2,1,3];<br>
+[x,kit,vres,vp,vr,al,be] = cg(A,[4,4,6]',1d-8)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">問題3.3
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter3.sce" target="_blank">chapter3.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+A=[4,3,0;3,4,-1;0,-1,4];<br>
+b=[10,8,10]';<br>
+[vx,it,vp,vr,vres,al,be] = cg(A,b,1d-12)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<!-- Chapter 4: ODE -->
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例4.8，表4.1
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+[res]=Euler2(6)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例4.12，図4.1
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+[res] = OrderPlot2(func1, func1sol, 0, 1, 0)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">ode_plot2.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例4.18，図4.2左
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+OdePlot3(RK, LotVol, 0, 4, [0.5,0.8], 200)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">ode_plot3.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例4.18，図4.2右
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+OdePlot2(RK, LotVol, 0, 8, [0.5,0.8], 200)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">phase0.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例4.19，図4.3
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+PlotvdPol(RK, 15)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">vdPol0.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例4.20，図4.4
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+dynamics1([2,1;1,2], 50,1)<br>
+dynamics1([1,2;2,1], 50,1.5)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">dynamic1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例4.21，図4.5
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+PlotPlanet(RK, 15, 0.5)<br>
+PlotPlanet(RK, 15, 0.8)
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">Planet0.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">図4.6
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+OdePlot4(2*%pi*2, 0.1)<br>
+OdePlot4(2*%pi*100, 0.1)
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">heun1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">図4.7
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+CN1(2*%pi*100,0.1)<br>
+CN1(2*%pi*200,0.1)
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">cn1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">図4.8
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+CN1(2*%pi*100,0.1)<br>
+CN1(2*%pi*200,0.1)
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">cn1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">図4.8
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+[res] = OrderPlot5(1)
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">heun_cn1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">図4.9
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+OdePlot8(1)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">logistic0.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">図4.10左
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+bvpPlot1(50, 1, func10)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">bvp1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">図4.10右
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+[res]=bvpOrder1(8)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">bvporder1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">図4.11
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+bvp5(100, 0.3)<br>
+bvp5(100, 0.1)<br>
+bvp5(100, 0.05)<br>
+bvp5(100, 0.01)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">bvp5.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">図4.10右
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+[res]=bvpOrder1(8)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">bvporder1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">問題4.2，表A.2/A.3
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  [res]=rate(func5,func5sol,Euler,0,0.99,1,4)<br>
+  [res]=rate(func5,func5sol,RK,0,0.99,1,4)<br>
+[res]=rate(func5,func5sol,Euler,0,0.99,1,8)<br>
+[res]=rate(func5,func5sol,RK,0,0.99,1,8)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">問題4.3，図A.4
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+OdePlot1(RK,func6, 0, 10, 10, 40)<br>
+OdePlot1(RK,func6, 0, 10, 10, 200)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">ode_plot0.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">問題4.4，図A.5
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter4.sce" target="_blank">chapter4.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+[res] = OrderPlot7(func1, func1sol, 0, 1, 0)
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">ode_plot7.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">プログラム5.1
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter5.sce" target="_blank">chapter5.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">mepsilon(1)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例5.7，図5.4
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter5.sce" target="_blank">chapter5.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  plot_func(1-10^(-1),1+10^(-1),func3,500) <br>
+  plot_func(1-10^(-2),1+10^(-2),func3,500)
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">p1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例5.7，図5.5
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter5.sce" target="_blank">chapter5.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  plot_func(1-10^(-1),1+10^(-1),func1,500) <br>
+  plot_func(1-10^(-2),1+10^(-2),func1,500)
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">p1.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例5.7，図5.6
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter5.sce" target="_blank">chapter5.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+  plot_func(1-10^(-1),1+10^(-1),func2,500) <br>
+  plot_func(1-10^(-2),1+10^(-2),func2,500)
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">p1.pdf</td>
+</tr>
+
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">問題5.4
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter5.sce" target="_blank">chapter5.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">[res]=dcos(60)<br>
+[res]=dcos2(60)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例6.3，図6.1
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter6.sce" target="_blank">chapter6.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">lutime(1200) [<a href="#r10" >注4</a>を参照]</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">lutime.pdf</td>
+</tr>
+
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例6.20，図6.2
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter6.sce" target="_blank">chapter6.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+result = output_lag6(0,%pi,10,func4,200)<br>
+result = output_lag6(0,%pi,30,func4,200)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">lag6.pdf</td>
+</tr>
+
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例6.20，図6.3
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter6.sce" target="_blank">chapter6.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+result = output_lag2(0,%pi,10,func4,200)<br>
+result = output_lag2(0,%pi,30,func4,200)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">lag2.pdf</td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例6.25，表6.3
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter6.sce" target="_blank">chapter6.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">A=hil_mat(30);<br>
+  [natori(A),cond(A,1)]</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例6.26，表6.4
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter6.sce" target="_blank">chapter6.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">
+result = output_lag6(0,%pi,5,func4,200)<br>
+result = output_lag6(0,%pi,10,func4,200)<br>
+result = output_lag6(0,%pi,30,func4,200)
+</td>
+<td bgcolor=#FFFFFF valign="Top" align="left"></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td bgcolor=#FFFFFF valign="Top" align="center">例6.28，図6.4
+<td bgcolor=#FFFFFF valign="Top" align="left"><a href = "chapter6.sce" target="_blank">chapter6.sce</a></td>
+<td bgcolor=#FFFFFF valign="Top" align="left">rec1(50, 2, 2/3)</td>
+<td bgcolor=#FFFFFF valign="Top" align="left">rec1.pdf</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+
+<ul>
+  <li><font color="green" id="r1">注1: </font> 1e-12も1d-12も<font color="red">10の-12乗</font>を意味します．</li>
+  <li><font color="green" id="r2">注2: </font>テキストではnを0からはじめていますが，プログラムでは1からはじめています．</li>
+  <li><font color="green" id="r3">注3: </font>
+ORTHPOLアルゴリズム（W. Gautschi, Algorithm 726: ORTHPOL---a package of routines for generating orthogonal polynomials and Gauss-type quadrature rules,  ACM Transactions on Mathematical Software, <b>20</b> (1994) 21-62）に基づきます．プログラムは
+参考文献[8]の10.6節を参考にしました．</li>
+  <li><font color="green" id="r10">注4: </font>「スタックサイズが制限を超えました!」というエラーが出る場合には，<font color="red">stacksize('max')</font>を実行してください．</li>
+</ul>
+
+<h2 id="id100">プログラムの利用の仕方</h2>
+
+<p>
+
+<ol>
+  <li>例として，<font color="green">例4.20・図4.4</font>を再現します．
+  そのために，まず，プログラム<font color="blue">chapter4.sce</font>をダウンロードしておきます．</li>
+  <li><a href="http://www.scilab.org/" target = "_blank">Scilabのオフィシャルページ</a>から，自分の環境に合わせてScilabをダウンロードしておきます．</li>
+  <li>Scilabを起動すると，下のような画面が出てきます．赤丸の部分で，さきほど<font color="blue">chapter4.sce</font>をダウンロードしたフォルダを選択します．そうすると，黄緑丸のように<font color="blue">chapter4.sce</font>が表示されるので，これをダブルクリックします．</li>
+  <img src="sl01.png" width="800" alt="Scilab">
+<li>すると，SciNotesというテキストエディタが起動して，下のようになります．</li>
+  <img src="sl02.png" width="600" alt="Scilab">
+<li>上の画像の赤丸で示したボタンを押してください．そうすると，下の赤箱のようなメッセージがでて，<font color="blue">chapter4.sce</font>が利用可能な状態になります．</li>
+  <img src="sl03.png" width="800" alt="Scilab">
+<li>そこで，下の黄緑箱の通りに<font color="red">コマンド</font>を自分で入力して，<font color="green">enter/returnキー</font>を押してください．</li>
+  <img src="sl04.png" width="800" alt="Scilab">
+<li>すると下のようなグラフィクスウインドウが出てきます．このウインドウの内容は，<font color="red">出力</font>で示した<font color="blue">	dynamic1.pdf</font>に自動的に保存されます．</li>
+  <img src="sl05.png" width="400" alt="Scilab">
+<li>Scilabの画面は，下のように，次の<font color="red">コマンド</font>が入力できる状態になりますので，次の作業をして下さい．</li>
+  <img src="sl06.png" width="800" alt="Scilab">
+
+  <li>Scilabを用いた計算の仕方については，自習していただくより他ありません．参考書もたくさん出ているし，インターネット上にはたくさんの情報がありますので，具体的に計算したいことがあれば，その方法を調べることは，それほど難しくありません．参考のため，東大数学科・統合自然科学科の講義（計算数理演習）で使用している資料：
+<a href="http://www.infsup.jp/saito/materials/15scilab_intro.pdf" target = "_blank">2015年度版</a>，
+<a href="http://www.infsup.jp/saito/materials/16scilab_intro.pdf" target = "_blank">2016年度版</a>
+を公開します（2015年度版の方が情報が少し多いです）．ご活用して下されば幸いです．ただし，この資料も自己責任でご利用ください．</li>
+</ol>
+
+ 
+  
+<p><p>
+<!-- 更新履歴 -->
+<form>
+<textarea cols=30 rows=5>
+更新履歴
+2017.04.01 正誤表を公開
+2017.03.23 本が発刊
+2017.02.09 まだ本は発刊されていませんが本ページを公開
+2016.10.15 暫定版の公開
+</textarea>
+</form>
+
+</body>
+</html>
