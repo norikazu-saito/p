@@ -1,0 +1,108 @@
+body{
+background-color:#ffffff;
+text-color:#000000;
+font-size:12pt; 
+font-family:Verdana, Arial, "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", sans-serif;
+}
+
+div {
+  background: #ffffff;
+  width: 90%;
+  padding: 10px;
+  margin: 30px auto;
+}
+
+a:link { color:#191970 }
+a:active { color:#191970 }
+a:visited { color:#191970}
+a:hover { font-size:100%; font-weight:bold; color:#00bfff;}
+a {text-decoration:none; border-bottom:1px #0000cd dotted;}
+
+
+h1{
+font-size: 140%;	
+margin: 2em 0 1em 0;
+border-width: 0 0 0 0;
+padding: 0.2em 1em;
+border-style: solid;
+}
+
+h2{
+font-size: 100%;	
+margin: 2em 0 1.5em 0;
+border-width: 0 0 1.5pt 0;
+padding: 0.2em 1em;
+border-color: #87ceeb;
+border-style: solid;
+}
+
+h3 {
+font-size: 100%;	
+margin: 2em 0 1em 0;
+border-width: 0 0 0 12pt;
+padding: 0.2em 1em;
+border-color: #87ceeb;
+border-style: solid;
+}
+
+
+h4 {
+font-size: 100%;	
+margin: 2em 0 1em 0;
+border-width: 0 0 0 12pt;
+padding: 0.2em 1em;
+border-color: #191970;
+border-style: solid;
+}
+
+
+
+
+
+ul, ol {
+margin-top: 0;
+line-height: 180%;
+}
+
+
+img.floatL{float:left; margin-left:10%; margin-right:10px; margin-bottom:10px; vertical-align:text-top}
+
+img.floatR{float:right; margin-left:10px; margin-bottom:10px; vertical-align:text-top}
+p.clear							
+
+hr{
+margin-right:10%; 
+margin-left:0%; 
+color:#87ceeb; 
+}
+
+address {
+font-style: normal;
+border-width: 1.5pt 0 0 0;
+border-color: #87ceeb;
+border-style: solid;
+text-align: center;
+text-valign: bottom;
+}
+
+div.box{
+margin-left:0%;
+margin-top:5px;     /* 上の余白 */
+margin-bottom:5px;     /* 下の余白 */
+width:100%;    
+padding: 0em 0em; /* 文字周りの余白 */
+background-color: #f0f8ff;
+border-radius: 3px; /* 角丸 */
+border: solid 1px #d6dde4; /* 枠線 */
+font-family: Consolas, Menlo, Monaco, -apple-system, BlinkMacSystemFont, "Segoe UI", Meiryo, monospace;
+}
+
+code {
+  display: inline-block;
+  padding: 0.1em 0.25em; /* 文字周りの余白 */
+  color: #444; /* 文字色 */
+  border-radius: 3px; /* 角丸 */
+  border: solid 1px #d6dde4; /* 枠線 */
+  font-family: Consolas, Menlo, Monaco, -apple-system, BlinkMacSystemFont, "Segoe UI", Meiryo, monospace;
+}
+

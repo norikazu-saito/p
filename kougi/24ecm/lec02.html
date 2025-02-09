@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<head>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>#02---計算数理演習2024</title>
+<meta name="Author" content="Norikazu Saito">
+<meta name="KeyWords" content="Norikazu Saito,齊藤宣一,斉藤宣一,齋藤宣一,斎藤宣一,さいとうのりかず">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/vs.min.css">
+<link REL="stylesheet" TYPE="text/css" HREF="naex.css">
+</head>
+<!-- MathJax ここから-->
+<!-- MathJaxの読み込み -->
+<script>
+MathJax = {
+  chtml: {
+    matchFontHeight: false
+  },
+  tex: {
+    inlineMath: [['$', '$']]
+  }
+};
+</script>
+<!-- 周囲の環境と英小文字の高さ（x-height）の調整-->
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+</head>
+
+<body>
+<!-- 本文中の数式をデフォルトで $ ... $ に-->  
+<script>
+MathJax = {
+  chtml: {
+    matchFontHeight: false
+  },
+  tex: {
+    inlineMath: [['$', '$']]
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<!-- MathJax ここまで-->
+
+<!-- 本文ここから -->
+<div>
+
+<p style="text-align: right">
+2024-3S 計算数理演習（東京大学理学部・教養学部）
+[<a href="https://norikazu-saito.github.io/p/" target="_blank" rel="noopener noreferrer">齊藤宣一</a>] 
+[<a href="index.html">top</a>] 
+[<a href="lec00.html">0</a>] 
+[<a href="lec01.html">1</a>]
+[<!a href="lec02.html">2</a>]
+[<a href="lec03.html">3</a>]
+[<a href="lec04.html">4</a>]
+[<a href="lec05.html">5</a>]
+[<a href="lec06.html">6</a>]
+[<a href="lec07.html">7</a>]
+[<a href="lec08.html">8</a>] 
+[<a href = "https://utol.ecc.u-tokyo.ac.jp/login" target="_blank"  rel="noopener noreferrer">UTOL</a>]
+</p>
+
+<h1>2. Pythonを用いた数値計算の基礎（浮動小数点数の演算）</h1>
+
+
+<p>次の2つの計算を比較せよ．一体，何が違うのだろうか？</p>
+
+<div class="box">
+<pre><font color="#4169e1">In [1]:</font> 10**50 + 812 - 10**50 + 10**35 - 12 - 10**35 
+
+<font color="#ffa500">Out [1]:</font> 800
+</pre>
+</div>
+
+<div class="box">
+<pre><font color="#4169e1">In [2]:</font> 10.0**50 + 812.0 - 10.0**50 + 10.0**35 - 12.0 - 10.0**35
+
+<font color="#ffa500">Out [2]:</font> 0.0
+</pre>
+</div>
+
+<p>この節の目標は，この現象を説明できるようになることである．</p>
+
+
+
+<h2>浮動小数点数</h2>
+
+
+<p>コンピュータでは，数値を計算する際に，数を浮動小数点数と呼ばれる特別な形をした有理数に置き換える．この講義では，浮動小数点数の詳細までは扱わないが，今後，数値計算を行う上で，知っておいた方が良い基礎事項を，簡単に，説明しておく．</p>
+
+<p>$\beta$ を正の整数とする． 一般に，$0$ でない実数 $\tilde{x}$ は，
+\[
+\tilde{x}=\pm
+\left(\frac{d_0}{\beta^0}+\frac{d_1}{\beta^1}+\frac{d_2}{\beta^2}
++\cdots \right)\cdot
+\beta^m 
+\]
+の形に表現できる．ただし，$m$ と $d_0,d_1,\ldots$ は整数，
+$0\le d_0,d_1,\ldots\le\beta-1$ とする．
+コンピュータでは，計算の速さや，記憶場所の効率性などの理由から，
+\begin{equation}
+\tag{$*$}
+{x}=\pm
+\underbrace{\left(\frac{d_0}{\beta^0}+\frac{d_1}{\beta^1}
++\cdots +\frac{d_n}{\beta^n}\right)}_{=\alpha}\cdot
+\beta^m 
+\end{equation}
+の形をした数のみを扱う．ここで，$n$は正の整数，$d_0,\ldots,d_n$ と $m$ は，
+\begin{equation}
+\tag{$**$}
+0\le d_i\le\beta-1\ (i=0,1,\ldots,n),\quad d_0\ne 0,\quad  -L\le m\le U
+\end{equation}
+を満たす整数とする．$L$ と $U$ は与えられた正の整数である．そして，集合
+\[
+\mathbb{F}(\beta,n+1,L,U)=
+\left\{0\right\}\cup\left\{
+\mbox{$(*)$と$(**)$で表現される数}\right\}
+\]
+を $\beta$ 進 $n+1$ 桁の浮動小数点数系と呼ぶ．
+このとき，$\beta$ を基数，$n+1$ を桁数，$L$ を最小指数，$U$ を最大指数と言う．さらに，
+$\alpha$ を $x$ の仮数部，$m$ を指数部と言う．
+</p>
+
+<h3>例2.1</h3>
+
+$\beta=2$, $n=2$, $L=2$, $U=1$ として，浮動小数点数系を構成してみると，
+\[
+  \mathbb{F}(2,3,2,1)=
+\{0\}\cup\left\{
+\pm \frac{d}{4}\times 2^{m} \mid d=4,5,6,7,\ m=-2,-1,0,1 
+\right\}
+\]
+となる．これを図示すると，以下のようになる．$\blacksquare$（$\leftarrow$ 例や命題が終わることを示す記し）
+<div style="text-align: center">
+<figure>
+<img src="fig/floatpoints.png" alt="Out[]" width="700">
+<figcaption>$\mathbb{F}(2,3,2,1)$ の正の部分</figcaption>
+</figure>
+</div>
+
+<p></p>
+
+<p>現在（2024年），ほとんどのコンピュータでは，IEEE (Institute of Electrical and Electronics Engineers)の定めたIEEE754-2008という浮動小数点数の規格が採用されている．
+特に，binary64（倍精度実数型）と呼ばれる規格がふつうに用いられる．これらの規格は，
+$\beta=2$，$n=52$，$L=1022$，$U=1023$で定められる浮動小数点数系
+\[
+\mathbb{F}=
+\mathbb{F}(2,~52+1,1022,1023)
+\]
+を中心に構成されている．Pythonでは，float型が，このbinary64（倍精度実数型）に対応している．</p>
+
+
+<h2>最大正数と「最小」正数</h2>
+
+<p>$\mathbb{F}$ の中で最大の正数は，
+\[
+ x_{\max} 
+ =
+ \left(\frac{1}{2^0}+\frac{1}{2^2}+\cdots+\cdots+\frac{1}{2^{52}}\right)\cdot
+ 2^{1023}
+ = (2-2^{-52})\cdot 2^{1023}=1.7976\cdots \times 10^{308}
+\]
+であり，「最小」の正数は
+\[
+x_{\min}=
+ \frac{1}{2^0}\cdot 2^{-1022}=2.2250\cdots \times 10^{-308}
+\]
+である．なぜ，最小とせずに「最小」と書いたのかは，後に明らかになる．</p>
+
+
+
+<h2>丸め (rounding)</h2>
+
+<p>コンピュータでは，計算のため入力した数値や，計算の途中で算出される中間的な数値，そして最終目標の答えを表す数値は，すべてそれらに近い $\mathbb{F}$ の要素で近似的に表現され，使用される．
+これを，実数 $\tilde{x}$ を浮動小数点数 $x$ に丸めると言う．この対応を，
+\[
+ \mathcal{F}(\tilde{x})=x
+\]
+と書くことにしよう．（この表記は，あまり一般的ではない．）</p>
+
+<p>
+丸めの方法は複数ある．以下しばらく，$x_{\min}\le |\tilde{x}|\le
+x_{\max}$ を満たす実数 $\tilde{x}$ を考える．
+$\tilde{x}$ が
+\[
+\tilde{x}=\pm 
+ \left(\frac{1}{2^0}+\frac{d_1}{2^1}+\frac{d_2}{2^2}+\cdots\right)\cdot 
+2^m 
+\]
+の形で書けるときに，この近似値として，
+\[
+x=\pm 
+ \left(\frac{1}{2^0}+\frac{d_1}{2^1}+\cdots
++\frac{d_{52}}{2^{52}}\right)\cdot 
+2^m 
+\]
+を採用する方法を切り捨てと言う．
+</p>
+
+<p>
+また，$\tilde{x}$ の近似値として，
+$|x-\tilde{x}|$ の値が最小となるような
+$x\in\mathbb{F}$，すなわち，
+\[
+\label{eq:f.1.13}
+|x-\tilde{x}|=\min_{y\in\mathbb{F}}|y-\tilde{x}|
+\]
+を満たす $x\in\mathbb{F}$ を採用する方法を
+最近点への丸めと言う．しかし，$\tilde{x}$ が，2つの $\mathbb{F}$ の元
+\[
+ {x}_1= \left(\frac{1}{2^0}+\cdots
++\frac{d_{52}}{2^{52}}\right)\cdot 2^m,\quad 
+{x}_2= \left(\frac{1}{2^0}+\cdots
++\frac{d_{52}+1}{2^{52}}\right)\cdot 2^m
+\]
+の中点のときは，$|x_1-\tilde{x}|=|x_2-\tilde{x}|$ が満たされるので，
+$x$ が一意的に決まらない．
+よく知られる，四捨五入（$0$捨$1$入）
+とは，このとき，
+\[
+x=x_2
+\]
+を採用する方法である．しかし，四捨五入では，丸めによる誤差が不均一になることが統計的に知られて
+いる．そこで，$d_{52}$ の値を考慮して，
+\[
+x=\begin{cases}
+x_1 & (d_{52}\mbox{が偶数のとき；$d_{52}=0$のとき})\\
+x_2 & (d_{52}\mbox{が奇数とき；$d_{52}=1$のとき})
+\end{cases}
+\]
+とする方法もある．
+このとき，結果として，$|x_1-\tilde{x}|=|x_2-\tilde{x}|$ を満たす
+ $\tilde{x}$ を丸めると，新しい $d_{52}$ は必ず偶数（$=0$）となる．
+この方法を，最近偶数への丸めと言う．</p>
+
+<p>
+丸めの方法として，どのような方法が採用されているかを確かめてみよう．
+そのために，計算機イプシロン$\varepsilon_{\mathrm{M}}$を利用する．計算機イプシロンとは，
+$1$より大きい最小の$\mathbb{F}$の要素と$1$との
+差，すなわち，
+\[
+\varepsilon_{\mathrm{M}}=2^{-52}=2.2204\cdots\times 10^{-16}
+\]
+のことである．いま，
+$1\in\mathbb{F}$，$1+\varepsilon_{\mathrm{M}}\in \mathbb{F}$
+であり，この間には $\mathbb{F}$ の要素はないから，最近点への丸めが行われていれば，
+\[
+ \mathcal{F}\left(1+\frac{1}{4}\varepsilon_{\mathrm{M}}\right)=1,\quad 
+\mathcal{F}\left(1+\frac{3}{4}\varepsilon_{\mathrm{M}}\right)=1+\varepsilon_{\mathrm{M}}
+\]
+と丸めが行われるはずである．一方，四捨五入が行われていれば，
+\[
+\mathcal{F}\left(1+\frac{1}{2}\varepsilon_{\mathrm{M}}\right)=1+\varepsilon_{\mathrm{M}}
+\]
+となるはずである．最近偶数への丸めが行われている場合はどうであろうか．いま，
+\[
+1+\frac{1}{2}\varepsilon_{\mathrm{M}}=\left(\frac{1}{2^0}+\frac{0}{2^1}
++\cdots +\frac{0}{2^{52}}+\frac{1}{2^{53}}\right)\cdot
+2^0 
+\]
+であり，$d_{52}=0$なので，$\mathcal{F}(1+\frac{1}{2}\varepsilon_{\mathrm{M}})$の値としては，$1$ が採用されるはずである．
+</p>
+
+
+<div style="text-align: center">
+<figure>
+<img src="fig/round2.jpg" alt="Out[]" width="700">
+<figcaption>図2.1</figcaption>
+</figure>
+</div>
+
+<p>実際に計算してみよう．</p>
+
+
+<div class="box">
+<pre><font color="#4169e1">In [3]:</font>  
+eps=2**-52
+print(eps)
+print(1.0+(1.0/4.0)*eps)
+print(1.0+(3.0/4.0)*eps)
+print(1.0+(1.0/2.0)*eps)
+print(1.0+eps)
+
+
+<font color="#ffa500">Out [3]:</font>
+2.220446049250313e-16
+1.0
+1.0000000000000002
+1.0
+1.0000000000000002 
+</pre>
+</div>
+
+<p>次の計算を説明できるか？</p>
+
+<div class="box">
+<pre><font color="#4169e1">In [4]:</font>  
+eps=2**-52
+print(2.0-eps)
+print(2.0-(1.0/4.0)*eps)
+print(2.0-(1.0/2.0)*eps)
+print(2.0-(3.0/4.0)*eps)
+
+<font color="#ffa500">Out [4]:</font> 
+1.9999999999999998
+2.0
+2.0
+1.9999999999999998
+</pre>
+</div>
+
+<h2>計算機イプシロン</h2>
+
+<p>
+計算機イプシロンの値を，
+\[
+\varepsilon_{\mathrm{M}}=2^{-52}=\min\left\{2^{-k} \mid
+				     \mathcal{F}(1+2^{-k})>1,~ k\ge 1\right\}
+\]
+に基づいて計算してみよう．（なお，丸めの方法として
+四捨五入が採用されている場合には，最右辺は$\varepsilon_{\mathrm{M}}=2^{-53}$となる）．
+</p>
+
+
+<div class="box">
+<pre><font color="#4169e1">In [5]:</font>  
+eps=1.0
+while 1.0+eps > 1.0:
+  eps = eps/2.0
+eps=2.0*eps                #一つ手前に戻す（なぜ？）
+print('eps=',eps)
+eps1=2**-52               #比較のため
+print('eps1=',eps1)
+
+<font color="#ffa500">Out [5]:</font> 
+eps= 2.220446049250313e-16
+eps1= 2.220446049250313e-16
+</pre>
+</div>
+
+<h2>オーバーフロー</h2>
+
+<p>$\mathbb{F}$ における最大の正数は $x_{\max}$ であった．</p>
+
+<div class="box">
+<pre><font color="#4169e1">In [6]:</font>  
+xmax=(2.0-2.0**-52)*2.0**1023
+print('xmax=',xmax)
+
+<font color="#ffa500">Out [6]:</font> xmax= 1.7976931348623157e+308
+</pre>
+</div>
+
+<div class="box">
+<pre><font color="#4169e1">In [7]:</font>  
+y=2.0*2.0**1023
+print('y=',y)
+
+<font color="#ffa500">Out [7]:</font> y= inf
+</pre>
+</div>
+
+<p>inf は，数学における $+\infty$ と同様の役割を果たすIEEEの規格で定められた特別な数である．
+計算の途中で，値 $y$ が大きすぎて $\mathbb{F}$ の要素で表現できなくなることをオーバーフローと言う．このとき，$y$ にはinfという特別な数を割り当てておく．そして，さらに計算を進めて，例えば，$1/{y}$ を計算する必要が出てきたらならば，これを $0$ とする．すなわち，計算の途中でオーバーフローが起こっても，ここで計算を中断せずに，計算を続けることができるようになっている．</p>
+
+<div class="box">
+<pre><font color="#4169e1">In [8]:</font> 
+print(1/xmax)
+print(1/y)
+print(3+1/xmax)
+print(3+1/y)
+
+<font color="#ffa500">Out [8]:</font> 
+5.562684646268003e-309
+0.0
+3.0
+3.0
+</pre>
+</div>
+
+<h2>非正規化数</h2>
+
+<p>$\mathbb{F}$ で扱える最小の正数は $x_{\min}$ のはずである．ところが，次の計算の通り，$x_{\min}$ よりも小さい正数が扱える．</p>
+
+<div class="box">
+<pre><font color="#4169e1">In [9]:</font>  
+xmin = 2.0**-1022
+yy=0.5*xmin
+print(xmin)
+print(yy)
+
+<font color="#ffa500">Out [9]:</font> 
+2.2250738585072014e-308
+1.1125369292536007e-308
+</pre>
+</div>
+
+<p>IEEEの規格は，単に浮動小数点数の構成だけでなく，他にも，特殊な数が定められている．
+前に説明したinfはその内の一つである．$\mathbb{F}$ の非零要素は，開区間 $(-x_{\min},x_{\min})$ の間に一つも存在しない．
+IEEEの規格では，絶対値が $x_{\min}$ よりも小さい数を表現するため
+\[
+ y=\pm
+ \left(\frac{d_0}{2^0}+\frac{d_1}{2^1}+\cdots+\frac{d_{51}}{2^{51}}\right)\cdot
+ 2^{-1023},\quad d_i=0,1\ (0\le i\le 51)\quad (***)
+\]
+の形の数が扱える．ここで，$d_0=0$ が許されている事，そして，その代わりに，
+$d_{52}/2^{52}$ がなくなっていることに注意すること．
+$(***)$ の形の数を非正規化数と呼ぶ．それに対して，$\mathbb{F}$ は，正規化された浮動小数点数（正規化数）と呼ばれる．</p>
+
+<p>非正規数全体のなす集合を$\mathbb{Y}$と書く事にしよう．
+$\mathbb{Y}$の要素の中で絶対値が最小の正数は
+$y_{\min}=2^{-51-1023}=4.9406\cdots \times 10^{-324}$，
+絶対値が最大の正数は
+$y_{\max}=(2-2^{-51})\cdot 2^{-1023}$
+である．当然，$\mathbb{Y}\subset (-x_{\min},x_{\min})$となっている．
+これにより，計算結果 $\tilde{x}$ が，$|\tilde{x}|\le \frac12 y_{\min}$ となった場合に，（$d_{51}=1$ なので）$\tilde{x}$ は $0$ に丸められる．
+</p>
+
+<p>ところで，$\mathbb{Y}$の要素は，絶対値が小さくなるについて仮数部の長さも小さくなる．特に $y_{\min}$ の仮数部の長さは$1$である．</p>
+
+<div class="box">
+<pre><font color="#4169e1">In [10]:</font>  
+ymin = 2.0**-51*2.0**-1023
+y1=0.5*ymin
+y2=0.51*ymin
+print(f'{ymin:.15e}')
+print(f'{y1:.15e}')
+print(f'{y2:.15e}')
+
+<font color="#ffa500">Out [10]:</font> 
+4.940656458412465e-324
+0.000000000000000e+00
+4.940656458412465e-324
+</pre>
+</div>
+
+
+<h2>相対誤差と絶対誤差</h2>
+
+<p>一般に，実数 $\tilde{x}$ の近似値として（浮動小数点数とは限らない）$x$ を採用する場合，
+\[
+|\tilde{x}-x|,\qquad \left|\frac{\tilde{x}-x}{\tilde{x}}\right|\
+ \mbox{($\tilde{x}\ne 0$のときのみ)}
+\]
+をそれぞれ，絶対誤差，相対誤差と言う．
+</p>
+
+<p>絶対値の大きい数を浮動小数点数で近似した場合，その絶対誤差は大きなものとなる．しかし，$x_{\min}\le |\tilde{x}|\le x_{\max}$ を満たす $\tilde{x}\in\mathbb{R}$ を 
+$x=\mathcal{F}(\tilde{x})\in\mathbb{F}$ で近似したとき，最近点への丸めを採用する限り，
+\begin{equation}
+\tag{$\#$}
+\left|\frac{\tilde{x}-{x}}{\tilde{x}}\right|\le \frac12 \varepsilon_{\mathrm{M}}\end{equation}
+が成り立つ（各自確かめよ！）．すなわち，相対的な丸め誤差は一定値以下となる．
+実際に数値計算をする立場からは， この不等式で評価される程度の誤差が常に含まれていることを自覚していれば，丸めの手法を具体的に知らなくても大きな問題はない．なお，この事実に基づいて，$\frac12\varepsilon_{\mathrm{M}}=2^{-53}$ のことを単位丸め誤差
+と呼ぶことがある．
+</p>
+
+
+<h2>桁落ちと情報落ち</h2>
+
+浮動小数点数系は四則演算に関して閉じていない（各自で例を挙げよ！）．したがって，コンピュータ内で，2つの実数 $x,y$ の加算は，
+\[
+\mathcal{F}\left(\mathcal{F}(x)+\mathcal{F}(y)\right)
+\]
+と実行される．すなわち，$x+y$ の（近似値としての）数値を得るまでに3回の丸めが行われる．
+そして，一般には，$x+y\ne \mathcal{F}\left(\mathcal{F}(x)+\mathcal{F}(y)\right)$ である．
+丸めを含んだ加算 $+$ を，通常の加算と区別して，$\oplus$と書こう．
+すなわち，
+\[
+ x\oplus  y =\mathcal{F}\left(\mathcal{F}(x)+\mathcal{F}(y)\right).
+\]
+同様に，減算，乗算，除算についても，
+\[
+  x\ominus  y =\mathcal{F}\left(\mathcal{F}(x)-\mathcal{F}(y)\right),\qquad
+  x\otimes  y=\mathcal{F}\left(\mathcal{F}(x)\times \mathcal{F}(y)\right),\qquad
+  x\oslash  y=\mathcal{F}\left(\mathcal{F}(x)\div \mathcal{F}(y)\right)
+\]
+とおく．そして，$\star=+,-,\times,\div$，および，$\odot=\oplus,\ominus,\otimes,\oslash$ に対して，
+\[
+ |(x\star y) - (x\odot y)|,\qquad  \left|\frac{(x\star y) -
+  (x\odot y)}{x\star y}\right|
+\]
+を，それぞれ，四則演算の絶対誤差，相対誤差と言う．
+
+
+<h3>例2.2</h3>
+10進（$\beta=10$），5桁（$n=4$），切り捨てを採用する．このとき，$x=1.2345\times 10^{-3}$に対して，
+$\sqrt{1+x}-1(=6.170596187\cdots \times 10^{-4})$
+の値を計算する．以下，$\mathcal{F}$ を書くのをサボる．
+\[
+1+x (=1.0012345)= 1.0012,\qquad 
+\sqrt{1+x} (=1.0005998\cdots)= 1.0005
+\]
+なので，
+\[
+\sqrt{1+x}-1 
+= 1.0005-1.0000 
+= 0.0005
+= 5\times 10^{-4}
+\]
+となり，はじめに5桁分あった情報が一つに減ってしまった．これを，$5-1=4$ 桁の桁落ちということがある．
+
+今の場合は，計算法を工夫することで回避できる．
+\[
+\sqrt{1+x}-1 = \frac{(\sqrt{1+x}-1)(\sqrt{1+x}+1)}{\sqrt{1+x}+1} 
+ = \frac{x}{\sqrt{1+x}+1} 
+(= 6.17095\times 10^{-4} )
+={6.1709\times 10^{-4}}.
+\]
+すなわち，浮動小数点演算では，値の近い2数の減算には十分な注意を要する．$\blacksquare$
+
+<h3>例2.3</h3>
+2次方程式 $x^2+bx+c=0$ の根を根の公式 $x=\frac{-b\pm\sqrt{b^2-4c}}{2}$ を使って計算してみる．$x^2-20x+\frac14=0$ を考えよう．
+正しい根は，
+$\tilde{x}_1=19.98749\cdots$，$\tilde{x}_2=0.01250782\cdots$である．
+引き続き，10進5桁，切り捨てで計算する．ここでも，$\mathcal{F}$ を書くのをサボる．すると，
+\[
+x_1=\frac{20+\sqrt{399}}{2}=\frac{20+19.974}{2}=19.987,\qquad 
+x_2=\frac{20-\sqrt{399}}{2}=\frac{20-19.974}{2}=0.012999
+\]
+となってしまう．これは，$-b-\sqrt{b^2-4c}=20-\sqrt{399}$ を計算
+      する際の桁落ちが原因である．
+
+回避方法としては，根と係数の関係 $\tilde{x}_1\tilde{x}_2=c$ を使うと，$x_2=\frac{1}{~4x_1~}=0.012508$ が得られる．$\blacksquare$
+
+<h3>例2.4</h3>
+
+10進5桁切り捨てで，
+$x=0.12345$ と $y=0.51234\times 10^{-7}$ について，$x+y$ を計算すると，
+$x+y=0.12345+0.0000051234=0.12345=x$ となってしまう．このように，大きさが極端に違う2数の加減算を行った時，小さいほうの数値の下位の桁が失われてしまう現象を，情報落ち（積み残し）と呼ぶ．
+$\blacksquare$
+
+<h3>例2.5</h3> 
+<p>$x= 192119201$と$y=35675640$ に対して，$a=\frac{1682 xy^4 + 3x^3 + 29xy^2 - 2x^5 + 832}{107751}$ の値を実際に計算してみる．正しくは，$a=1783$ である．</p>
+
+
+<div class="box">
+<pre><font color="#4169e1">In [11]:</font>  
+x=192119201.0
+y=35675640.0
+a=(1682*x*y**4 + 3*x**3 + 29*x*y**2 - 2*x**5 + 832)/107751
+print(a)
+
+<font color="#ffa500">Out [11]:</font>
+0.00772150606490891 
+</pre>
+</div>
+
+<p>pythonでは，整数は（原則）任意の桁が利用できるので，以下のように計算してみる．</p>
+
+<div class="box">
+<pre><font color="#4169e1">In [12]:</font>  
+x=192119201
+y=35675640
+a=(1682*x*y**4 + 3*x**3 + 29*x*y**2 - 2*x**5 + 832)/107751
+b=1682*x*y**4 + 3*x**3 + 29*x*y**2
+c=-2*x**5 + 832
+print(a)
+print(b)
+print(c)
+
+<font color="#ffa500">Out [12]:</font> 
+1783.0
+523460426438903561672655644813076046111203
+-523460426438903561672655644813075853991170
+</pre>
+</div>
+
+<p>In [11]の計算では，はじめから浮動小数点数の計算をしていたので，分子の計算において桁落ちが発生していたことがわかる．In [12]の計算では，分子の計算は整数として計算しているので，正しく計算ができているのである．$\blacksquare$</p>
+
+<h3 id="id1">例2.6</h3> 
+<p>連立一次方程式の計算では，以下のような現象も起こりうる．
+\[
+\begin{pmatrix}
+64919121 &-159018721 \\
+41869520.5 &-102558961
+\end{pmatrix}
+\begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+1\\
+0
+\end{pmatrix}
+\]
+を計算すると，
+$x_1=106018308$，$x_2=43281793$
+が算出され，正しい値$x_1=102558961$，$x_2=41869520.5$とはだいぶ異なる．$\blacksquare$
+</p>
+
+<div class="box">
+<pre><font color="#4169e1">In [13]:</font>  
+import numpy as np
+A=np.array([[64919121,-159018721],[41869520.5,-102558961]])
+b=np.array([1,0])
+print('A=',A)
+print('b=',b)
+x=np.linalg.solve(A, b)
+print('x=',x)
+print('Ax=',A@x)
+y=np.array([102558961,41869520.5])
+print('y=',y)
+print('Ay=',A@y)
+
+<font color="#ffa500">Out [13]:</font> 
+A= [[ 6.49191210e+07 -1.59018721e+08]
+ [ 4.18695205e+07 -1.02558961e+08]]
+b= [1 0]
+x= [1.06018308e+08 4.32817930e+07]
+Ax= [ 0.65715453 -0.1278639 ]
+y= [1.02558961e+08 4.18695205e+07]
+Ay= [1. 0.]
+</pre>
+</div>
+
+<p>これも，実は，浮動小数点演算が関係しているのである（行列の条件数）が，本講義では，深く立ち入らない．$\blacksquare$</p>
+
+
+<h2>答え合わせ</h2>
+
+<p>ここで，改めて，本節の最初の例In[1]とIn[2]について考える．</p>
+
+<div class="box">
+<pre><font color="#4169e1">In [14]:</font>  
+a=10.0**50 + 812.0 - 10.0**50 + 10.0**35 - 12.0 - 10.0**35
+b=10.0**50 + 812.0 
+c=10.0**50 + 812.0 - 10.0**50
+d=10.0**50 + 812.0 - 10.0**50 + 10.0**35 
+e=10.0**50 + 812.0 - 10.0**50 + 10.0**35 - 12.0 
+print(f'{a:.16e}')
+print(f'{b:.16e}')
+print(f'{c:.16e}')
+print(f'{d:.16e}')
+print(f'{e:.16e}')
+
+<font color="#ffa500">Out [14]:</font>
+0.0000000000000000e+00
+1.0000000000000001e+50
+0.0000000000000000e+00
+9.9999999999999997e+34
+9.9999999999999997e+34 
+</pre>
+</div>
+
+<p>もうわかっていると思うが，情報落ちが起こっているのである．整数演算と比較してみると，なお，わかりやすい．</p>
+
+<div class="box">
+<pre><font color="#4169e1">In [15]:</font>  
+a=10**50 + 812 - 10**50 + 10**35 - 12 - 10**35 
+b=10**50 + 812 
+c=10**50 + 812 - 10**50 
+print(a)
+print(b)
+print(c)
+
+<font color="#ffa500">Out [15]:</font> 
+800
+100000000000000000000000000000000000000000000000812
+812
+</pre>
+</div>
+
+<h2>補足</h2>
+
+<p>float型の規格をつぎのようにして確かめることも可能である．（ただし，これだと，これらの数値が，どのような規則に従って定められているのかがわからないままである．）</p>
+
+<div class="box">
+<pre><font color="#4169e1">In [16]:</font>  
+import sys
+print(sys.float_info)
+
+<font color="#ffa500">Out [16]:</font> 
+sys.float_info(max=1.7976931348623157e+308, 
+max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, 
+min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, 
+epsilon=2.220446049250313e-16, radix=2, rounds=1)</pre>
+</div>
+
+
+
+<h2>問題</h2>
+
+<ol>
+<li>上記の入力と出力をすべて確かめよ．数値を変えて，試してみよ．</li>
+<li>例2.1で説明した，$\mathbb{F}(2,3,2,1)$が四則演算について閉じていないことを，例を挙げることで確かめよ．</li>
+<li>参考文献などを参考にして（あるいは完全に自力で），桁落ちや情報落ちの例を自分で作れ．</li>
+</ol>
+
+
+<h2>課題</h2>
+
+<h4>課題2.1</h4>
+
+<p>
+円周率 $\pi$ の近似値を計算してみよう．いろいろなやり方があるが，半径が $1$ の円に内接する正 $n$ 角形の周長を $p_n$，外接する正 $n$ 角形の周長を $q_n$ とするとき，
+$p_n < 2\pi < q_n$ であることを利用しよう．ただし，$n\ge 3$ は整数である．$n=6$ のときは，$p_6$ は半径1の円に内接する正6角形の周長なので，$p_6=6$ となることはすぐにわかる．しばらくは，$p_n$のみを考える．一般に，
+\[
+ p_n=2n \sin \left(\frac{\pi}{n}\right)=2n\sigma_n\qquad \left(\sigma_n=\sin \left(\frac{\pi}{n}\right)\right)
+\]
+であるが，これを直接計算して $p_n$ を求めることは，$\pi$ の値を使って $\pi$ の値を求めることになり，本末転倒である．しかし，今の場合，$\sigma_{2n}$ が $\sigma_{n}$ を用いて表現できるので，それを用いて $p_{2n}$ を計算しよう．実際，$0<\alpha<\frac{\pi}{2}$ の場合には，
+\[
+ \sin\left(\frac{\alpha}{2}\right)=
+\sqrt{\frac{1-\cos\alpha}{2}}
+=
+\sqrt{\frac{1-\sqrt{1-\sin^2\alpha}}{2}}
+\]
+が成り立つので，
+\[
+ \sigma_{2n}=\sin\left(\frac{\pi/n}{2}\right)=
+\sqrt{\frac{1-\sqrt{1-\sigma_n^2}}{2}}
+\]
+となる．すなわち，
+\[
+ p_{2n}=2(2n)\sigma_{2n}=2(2n)\sqrt{\frac{1-\sqrt{1-\sigma_n^2}}{2}}
+\]
+が得られる．一方で，$\sigma_6=1/2$ である．</p>
+
+<p>この考えに基づいて，$p_n$ $(n=6,12,24,\ldots)$ を計算してみよ．順調に計算ができるか，それとも，問題が起こるか？　問題が起こった場合には，回避方法を検討せよ．</p>
+
+
+<h4>課題2.2</h4>
+
+<p>関数$f(x)$に対して，極限値
+$\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}$ の値が存在するとき，その値を $f'(a)$ と書き，$x=a$ における微分係数と言うのであった．この定義に基づくと，$h>0$ が十分に小さいとき，分数
+$\frac{f(a+h)-f(a)}{h}$ は，$f'(a)$ の十分良い近似値を与えることが期待できる．これを $f(x)$ の　$x=a$ における幅 $h$ の前進差分商，あるいは，前進Euler近似と呼ぶ．関数 $f(x)=\cos x$ について，$x=1$ での微分係数 $f'(1)=-\sin 1
+ =-0.84147098480789\cdots$ の近似値を，この方法によって計算せよ．
+順調に計算ができるか，それとも，問題が起こるか？　問題が起こった場合には，回避方法を検討せよ．
+</p>
+
+<h2>参考文献など</h2>
+
+<ol>
+<li>U. W. Kulisch and W. L. Miranker: 
+<a href="https://www.jstor.org/stable/2030600" target="_blank" rel="noopener noreferrer">The arithmetic of the digital computer: a new approach</a>, SIAM Review 28 (1986) 1-40.<br>
+例2.6は，この論文からとりましたが，あれ？ということが書いてあります．どこでしょうか？</li>
+<li>高安亮紀，Juliaで精度保証付き数値計算，<a href="https://taklab-blog.blogspot.com/2021/01/rigorous-numerics-julia.html" target="_blank" rel="noopener noreferrer">https://taklab-blog.blogspot.com/2021/01/rigorous-numerics-julia.html</a><br>
+これもだいぶ参考にしました．</li>
+<li>齊藤宣一，数値解析（共立講座数学探求），共立出版，2017年</li>
+</ol>
+
+<div style="text-align: right">---「2. Pythonを用いた数値計算の基礎（浮動小数点数の演算）」はこれで終了---</div>
+
+
+
+</div>
+<!-- 本文ここまで -->
+
+<!-- highlight.jsの設定 ここから-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script>
+  // ハイライトを実行
+  hljs.initHighlightingOnLoad();
+</script>
+<!-- highlight.jsの設定 ここまで-->
+
+</body>
+</html>
