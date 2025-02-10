@@ -20,16 +20,18 @@
 
 <li>
 D. Inoue, Y. Ito, T. Kashiwabara, N. Saito and H. Yoshida, 
+An uncertainty-aware, mesh-free numerical method for Kolmogorov PDEs, 
+ <i><a href = "https://arxiv.org/abs/2405.05626" target = "_blank">arXiv: 2405.05626</a></i>
+</li>
+
+
+<li>
+D. Inoue, Y. Ito, T. Kashiwabara, N. Saito and H. Yoshida, 
 Convergence analysis of the upwind difference methods for Hamilton-Jacobi-Bellman equations, 
  <i><a href = "https://arxiv.org/abs/2301.06415" target = "_blank">arXiv: 2301.06415</a></i>
 </li>
 
-<!--
-<li>M. Miyashita and N. Saito: A finite element method to a periodic steady-state problem for an electromagnetic field system using the space-time finite element exterior calculus,
-  <i><a href = "https://arxiv.org/abs/2201.04481
-" target = "_blank">arXiv: 2201.04481
-  </a></i></li>
--->
+
  
 </li>
 
@@ -39,7 +41,10 @@ Convergence analysis of the upwind difference methods for Hamilton-Jacobi-Bellma
 
 <ol reversed>
 
- 
+<li>M. Miyashita and N. Saito: A finite element method to a periodic steady-state problem for an electromagnetic field system using the space-time finite element exterior calculus, (to appear in) <i><a href = "https://link-springer-com.utokyo.idm.oclc.org/journal/42967" target = "_blank">Commun. Appl. Math. Comput.</a></i>, Vol. XX, No. X (202X) XXXX-XXXX. 
+<!a href = "http://doi.org/" target = "_blank">DOI: XXXX</a> 
+ [<a href = "https://arxiv.org/abs/2201.04481" target = "_blank">arXiv: 2201.04481</a>]</li>
+
 
 
    <li>Y. Chiba and N. Saito: Nitsche's method for a Robin boundary value problem in a smooth domain, <i><a href = "https://onlinelibrary.wiley.com/journal/10982426" target = "_blank">Numer. Methods Partial Differential Equations</a></i>, Vol. 39, No. 6 (2023) 4126-4144. 
@@ -255,7 +260,7 @@ On the domain-dependence of convergence rate in a domain
 decomposition method for the Stokes equations, 
 <i><!a href = "http://www.degruyter.com/view/j/jnma" target = "_blank">
 East-West J. Numer. Math.</a></i>, 
-Vol. 8, No. 1 (2000) 37-55. [<a href = "http://www.infsup.jp/saito/materials/00Sai_EWJ_DDM.pdf" target = "_blank">pdf</a>]</li>
+Vol. 8, No. 1 (2000) 37-55. [<a href = "../materials/00Sai_EWJ_DDM.pdf" target = "_blank">pdf</a>]</li>
 
 
 </ol>
@@ -304,23 +309,23 @@ Numerical outflow boundary conditions for the Navier-Stokes equations,
 齊藤宣一：退化放物型方程式に対する有限要素法と有限体積法，京都大学数理解析研究所講究録，Vol. <a href ="http://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/1810.html" target = "_blank">1810</a>, (2012) 169-188.
 </li>
 
-<li>齊藤宣一：<a href ="http://www.infsup.jp/saito/materials/00Fnsaito.pdf" target = "_blank">発展方程式の数値解析</a>，
-<a href ="http://www.math.tsukuba.ac.jp/~tkubo/wakate33.html" target ="_blank">第33回発展方程式若手セミナー</a>報告集，2011年．</li>
+<li>齊藤宣一：<!a href ="" target = "_blank">発展方程式の数値解析</a>，
+<!a href ="http://www.math.tsukuba.ac.jp/~tkubo/wakate33.html" target ="_blank">第33回発展方程式若手セミナー</a>報告集，2011年．</li>
 
 <li> 
 齊藤宣一：有限体積法とBaba-Tabata型保存的上流有限要素法，
 京都大学数理解析研究所講究録，Vol. 1719 (2010) 130-141  >> [<a href ="http://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/170355" target = "_blank">Kyoto University Research Information Repository</a>]</li>
 
 <li> 
-齊藤宣一：Keller-Segel方程式の数値解析，応用数理，第19巻，第4号，2009年，65-74. <a href = "http://dx.doi.org/10.11540/bjsiam.19.4_281" target = "_blank">DOI: 10.11540/bjsiam.19.4_281</a></li>
+齊藤宣一：Keller-Segel方程式の数値解析，応用数理，第19巻，第4号，2009年，65-74. DOI: <a href = "http://dx.doi.org/10.11540/bjsiam.19.4_281" target = "_blank">10.11540/bjsiam.19.4_281</a></li>
 
 <li> N. Saito: 
 On interpolation spaces in a polygon, 
 富山大学人間発達科学部紀要，第2巻，第1号，7-12，2007年</li>
 
 
-<li>N. Saito: Conservative finite-difference scheme to a chemotaxis system, <i>Proceedings of Fourth International Conference FDM: T & A 2006</i> (August 26-29, 2006, Lozenetz, Bulgaria), I. Farago, P. Vabishchevich and L. Vulkov eds., Rousse (2007) 294-300 >> 
-<a href ="http://www.infsup.jp/saito/materials/sai06-4d.pdf" target = "_blank"> [PDF 148KB]</a></li>
+<li>N. Saito: Conservative finite-difference scheme to a chemotaxis system, <i>Proceedings of Fourth International Conference FDM: T & A 2006</i> (August 26-29, 2006, Lozenetz, Bulgaria), I. Farago, P. Vabishchevich and L. Vulkov eds., Rousse (2007) 294-300.  
+[<a href ="../materials/sai06-4d.pdf" target = "_blank">pdf</a>]</li>
 
 
 <li>齊藤宣一：走化性放物型系に対する有限要素近似，偏微分方程式と現象：
@@ -389,7 +394,7 @@ under a certain nonlinear boundary condition,
 <i>The Navier-Stokes Equations: Theory and Numerical Methods (Varenna), 
 Lecture Notes in Pure and Applied Mathematics</i>, 
 Marcel Dekker, Vol. 223 (2002) 73-86.
-[<a href = "http://www.infsup.jp/saito/materials/01SF_Proc_NS.pdf" target = "_blank">pdf</a>]
+[<a href = "../materials/01SF_Proc_NS.pdf" target = "_blank">pdf</a>]
 </li>
 
 <li> N. Saito: 
@@ -444,7 +449,8 @@ in DDM under certain shape assumptions of domains,
 
 <li>齊藤宣一，
 <a href ="https://www.u-tokyo.ac.jp/gen03/kouhou/1577/end.html" target = "_blank">選抜はするけれど（淡青評論1162回）
-</a>，東京大学「学内広報」，NO. <a href ="https://www.u-tokyo.ac.jp/content/400229950.pdf" target = "_blank">1577</a>，2023年12月21日</li>
+</a>，東京大学「学内広報」，NO. 
+<a href ="https://www.u-tokyo.ac.jp/content/400229950.pdf" target = "_blank">1577</a>，2023年12月21日</li>
 
 
 <li>齊藤宣一，
@@ -460,10 +466,10 @@ in DDM under certain shape assumptions of domains,
 [初出，<a href ="https://jsiam.org/online_magazine/note/3289/" target = "_blank">新しい学会事務局について</a>，JSIAM Online Magazine, Article: K2103A, Date: 2021/04/21]</li>
 
 <li> 
-齊藤宣一：計算とは何か，数理科学：《計算》とは何か--数値がもたらす様々な問いかけ，2021年8月号（No. 698）</li>
+齊藤宣一，計算とは何か，数理科学：《計算》とは何か--数値がもたらす様々な問いかけ，2021年8月号（No. 698）</li>
 
 <li> 
-齊藤宣一：偏微分方程式と数値計算，数理科学：《計算》とは何か--数値がもたらす様々な問いかけ，2021年8月号（No. 698）</li>
+齊藤宣一，偏微分方程式と数値計算，数理科学：《計算》とは何か--数値がもたらす様々な問いかけ，2021年8月号（No. 698）</li>
   
 
 <li>齊藤宣一，<a href ="https://jsiam.org/online_magazine/report/3432/" target = "_blank">日本応用数理学会2019年度年会開催報告と若干の思い出</a>（学術会合報告）, JSIAM Online Magazine, 2019/10/08</li>
@@ -480,7 +486,7 @@ CJK2016: 第6回日中韓数値数学合同カンファレンス参加報告</a>
 <li>齊藤宣一，<a href ="https://jsiam.org/online_magazine/news_presentations/3509/" target = "_blank">
 「科学技術計算と数値解析」研究部会とUTNAS</a>（研究部会だより）, JSIAM Online Magazine, 2014/09/13</li>
 
-<li>齊藤宣一，東大教師が新入生にすすめる本，UP，2013-4号 [<a href ="https://www.utp.or.jp/book/b307153.html" target = "_blank">東大教師が新入生にすすめる本2009-2015（東京大学出版会）</a>に掲載]</li>
+<li>齊藤宣一，東大教師が新入生にすすめる本，UP，2013-4号 [<a href ="https://www.utp.or.jp/book/b307153.html" target = "_blank">東大教師が新入生にすすめる本2009-2015（東京大学出版会）</a>に掲載]  [<a href = "../materials/130115utpress1.pdf" target = "_blank">pdf</a>]</li>
 
 <li>齊藤宣一，<a href ="https://jsiam.org/online_magazine/book_review/4368/" target = "_blank">『偏微分方程式の数値解析』（田端正久）</a>（書評）, JSIAM Online Magazine, 2012/12/18</li>
 
@@ -502,7 +508,7 @@ CJK2016: 第6回日中韓数値数学合同カンファレンス参加報告</a>
 </div>
 
 <address>
-Copyright (C) 2015 <a href="http://www.infsup.jp/saito/" target="_blank">Norikazu Saito</a> 
+Copyright (C) 2015 <a href="../index.html" target="_blank">Norikazu Saito</a> 
 </address>
 
 
