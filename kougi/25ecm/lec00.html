@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<head>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>#00---計算数理演習2025</title>
+<meta name="Author" content="Norikazu Saito">
+<meta name="KeyWords" content="Norikazu Saito,齊藤宣一,斉藤宣一,齋藤宣一,斎藤宣一,さいとうのりかず">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/vs.min.css">
+<link REL="stylesheet" TYPE="text/css" HREF="naex.css">
+</head>
+<!-- MathJax ここから-->
+<!-- MathJaxの読み込み -->
+<script>
+MathJax = {
+  chtml: {
+    matchFontHeight: false
+  },
+  tex: {
+    inlineMath: [['$', '$']]
+  }
+};
+</script>
+<!-- 周囲の環境と英小文字の高さ（x-height）の調整-->
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+</head>
+
+<body>
+<!-- 本文中の数式をデフォルトで $ ... $ に-->  
+<script>
+MathJax = {
+  chtml: {
+    matchFontHeight: false
+  },
+  tex: {
+    inlineMath: [['$', '$']]
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<!-- MathJax ここまで-->
+
+<!-- 本文ここから -->
+<div>
+
+<p style="text-align: right">
+2025-3S 計算数理演習（東京大学理学部・教養学部）
+[<a href="https://norikazu-saito.github.io/p/" target="_blank" rel="noopener noreferrer">齊藤宣一</a>] 
+[<a href="index.html">top</a>] 
+[<!a href="lec00.html">0</a>] 
+[<a href="lec01.html">1</a>]
+[<a href="lec02.html">2</a>]
+[<!a href="lec03.html">3</a>]
+[<!a href="lec04.html">4</a>]
+[<!a href="lec05.html">5</a>]
+[<!a href="lec06.html">6</a>]
+[<!a href="lec07.html">7</a>]
+[<!a href="lec08.html">8</a>] 
+[<a href = "https://utol.ecc.u-tokyo.ac.jp/login" target="_blank"  rel="noopener noreferrer">UTOL</a>]
+</p>
+
+
+<h1>0. ガイダンス</h1>
+
+<h2>担当者</h2>
+
+<p><a href ="https://norikazu-saito.github.io/p/" target="_blank" rel="noopener noreferrer">齊藤 宣一</a>（さいとう　のりかず）
+<!a href ="https://www.ms.u-tokyo.ac.jp/index-j.html" target="_blank" rel="noopener noreferrer">数理科学研究科</a>
+<img src="fig/ecc_mail.jpg" width=300 align="top" alt="mail address"></p>
+
+
+
+
+<h2>講義の形式</h2>
+
+<p>本講義は，駒場情報教育棟（E41）での対面型の講義として行います．</p>
+<p>一方で，講義はすべて，Zoomを通じてリアルタイムにストリーミング配信します．また，Zoomの録画を（受講生にのみ）公開します．対面講義に参加が難しい学生は，これらの方法を利用して，オンラインで講義を受けることが可能です．（いわゆるハイフレックス型講義です）</p>
+
+<p>出席はとりません．</p>
+
+<h2>講義の概要</h2>
+
+
+<h3>動機1</h3>
+
+代数方程式 $z^n+a_{n-1}z^{n-1}+\cdots+a_1z+a_0=0$ の根の数値を求めたい．
+
+
+<ul>
+<li>根の公式を使えば良い？
+<ul style = "list-style:none">
+<li>
+カルダーノ(Cardano)の公式:
+$x^3+px+q=0$ の根の一つは，
+$x=
+\sqrt[3]{-\frac{q}{2}+\sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}+
+\sqrt[3]{-\frac{q}{2}-\sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}$.
+</li>
+<li> $f(x)=x^3-3x-1=0$ に適用すると，
+$x=\sqrt[3]{\frac12+ i\sqrt{\frac34}}+\sqrt[3]{\frac12- i\sqrt{\frac34}}$ となる．
+</li></ul>
+</li>
+<li>具体的な数値（近似解）が知りたい</li>
+<ul style = "list-style:none">
+<li>構成的な解法としての反復解法
+$x_{k+1}=\varphi(x_k)$ が便利．関数 $\varphi$ を $\lim_{k\to\infty}x_k=\mbox{ 根 }$ となるように構成したい．</li>
+<li>Newton法が有名</li>
+</ul>
+</ul>
+
+<div style="text-align: left">
+<img src="fig/equation1.png" alt="図1" width="400">
+</div>
+
+<h3>動機2</h3>
+
+有界閉区間 $[a,b]$ 上の連続関数 $f(x)$ に対して，$\displaystyle{\int_a^bf(x)~dx}$ の値を求めたい．
+
+<ul>
+<li>原始関数がわからない場合どうするか？ ほとんどの場合!</li>
+</ul>
+
+<div style="text-align: left">
+<figure>
+<img src="fig/quadrature.png" alt="quadrature" width="700">
+<figcaption></figcaption>
+</figure>
+</div>
+
+
+<h3>動機3</h3>
+
+競合の関係下にある2種類の生物の増殖の数理モデル（Lotoka-Volterra微分方程式系
+）
+\[
+ \displaystyle{\frac{du_1}{dt}} = c_1u_1(1-b_1u_1-d_2u_2),\qquad 
+\displaystyle{\frac{du_2}{dt}} = -c_2u_2(1-b_2u_2-d_1u_1)
+\]
+の解について，$u_1(t)$ と $u_2(t)$ の時間変化が知りたい．ここで，$u_1(t)$ と $u_2(t)$ は2種類の生物の個体密度，
+$c_1,c_2$ はそれぞれの生物の増殖係数，さらに，$b_1,b_2,d_1,d_2$ は，互いの競合の関係や，環境の影響を表現する定数である．
+
+<div style="text-align: left">
+<figure>
+<img src="fig/lv.png" alt="Lotoka-Volterra" width="350">
+<figcaption>c1=1, c2=1, d1=1, d2=1, b1=0, b2=0のときの相図</figcaption>
+</figure>
+</div>
+
+
+
+<h3>動機4</h3>
+
+偏微分方程式，特に，熱方程式や波動方程式
+\[
+\frac{\partial u}{\partial t}=
+\kappa \frac{\partial^2 u}{\partial x^2},\qquad 
+\frac{\partial^2 u}{\partial t^2}=c^2
+\frac{\partial^2 u}{\partial x^2}
+\]
+の解を可視化したい．
+
+<div style="text-align: left">
+<figure>
+<img src="fig/wave2.gif" alt="Lotoka-Volterra" width="400">
+<figcaption>波動方程式の解</figcaption>
+</figure>
+</div>
+
+<h3>本講義の目標</h3>
+
+
+<p>本講義では，数学的問題の解を具体的に計算する（$=$数値を得る）方法を研究する．このような分野には，いろいろな呼び方がある．</p>
+
+<ul>
+<li> 数値解析 (numerical analysis) </li> 
+<li> 数値計算 (numerical computation) </li> 
+<li> 計算数理 (computational mathematics)</li> 
+<li> 科学計算 (scientific computing)</li> 
+</ul>
+
+<p>もう少し大きな分類では，応用数学の一部になる．</p>
+
+
+<p>一つの行き先：
+<a href="https://www.youtube.com/watch?v=267HdDdIywI" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=267HdDdIywI</a></p>
+
+<p>ただし，この講義は，より<font color="#ff1493">数学的な部分を強調</font>します．</p>
+
+<p>キーワードは，<font color="#ff1493">連続と離散</font>．</p>
+
+
+<h2>スケジュールと方法</h2>
+
+
+<ul>
+<li>4月14日<font color="#4169e1">（月）</font> ガイダンス（<font color="#ff1493">オンラインとオンデマンドのみ</font>）</li>
+<li>4月18日 1. Pythonによる数値計算の基礎</li>
+<li>4月25日 2. Pythonによる数値計算の基礎（浮動小数点数の演算）</li>
+<li>5月2日 3. 非線形方程式の求解</li>
+<li>5月9日 4. 数値積分</li>
+<li>5月16日 レポート作成日</li>
+<li>5月23日 レポート作成日</li>
+<li>6月6日 5. 固有値問題</li>
+<li>6月13日 6. 常微分方程式の初期値問題（基礎編）</li>
+<li>6月20日 7. 微分方程式の初期値問題（応用編）</li>
+<li>6月27日 8. 偏微分方程式：熱伝導，波動の数値計算</li>
+<li>7月4日 レポート作成日</li>
+<li>7月11日 レポート作成日</li>
+</ul>
+
+
+
+<p>本講義では，提示された課題に対して，受講生が自ら作成したプログラムを用いて，数値計算を行い，理論との比較検討の考察を行ってもらいます．ただし，いずれの課題についても，数値計算法の説明をした上で，たたき台となるサンプルプログラムを提示して，計算を実演します．サンプルプログラムは，
+<a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer">Google colaboratory</a>を用いてPythonで作成します．ネットワークに繋がる環境で受講できれば，計算環境を自分で整える必要はありません．</p>
+
+<p>講義は毎回，次のように行います．</p>
+
+<ul>
+<li>各項目について，説明と実演をする．</li>
+<li>受講生は，各項目の問題と課題に各自で取り組む．受講生同士での議論，情報交換を歓迎する．</li>
+<li>ただし，説明にそれなりに時間がかかるので，受講生が計算課題に取り組む時間はそう多くない．そのため，「レポート作成日」を設ける．</li>
+<li>レポート作成日については，受講生が主体的に，計算に取り組み，質問や討議を通じて，理解を深める．</li>
+</ul>
+
+
+
+<p><font color="#4169e1">本講義の目標は，Pythonの修得ではありません</font>．あくまで，数値計算の道具の代表例として利用します．受講生は，他の言語や（Matlabなどの）ソフトウエアを用いても構いません．また，Google colaboratoryを利用せず，受講者自身のPythonプログラミング環境で計算を行っても結構です．</p>
+
+<p>Pythonについて，巷では色々な評価があります．私は，簡単に，色々なことができて便利であると思います．利用者が自分で環境構築をしなくても良い（環境が利用できる）ところにも，お得感があります．</p>
+
+
+
+<h2>注意</h2>
+
+<p>金曜2限の計算数理I（理学部），計算数理（教養学部）の履修を，強く勧めます．</p>
+
+
+<h2>成績評価とレポートの提出</h2>
+
+<ul>
+<li>成績評価はレポートによる：前半1回（6月6日締切を予定），後半1回（7月25日締切を予定）</li>
+<li>一つのレポートについて，課題2つ分を報告してもらう．課題は，各項目について1〜3個ある．その中から，2題を選択するということ．</li>
+<li>前半に出してもらったレポートのうち，良いものについては，講義中に紹介します．</li>
+</ul>
+
+
+<h2>レポートの形式</h2>
+
+<p>レポートは，PDF形式（*****.pdf）のファイルで，UTOLのレポート登録機能を通じて提出されたもののみを受け付ける．</p>
+
+<p>レポートの構成は次のようにすること：</p>
+<ul>
+<li>名前と所属学科</li>
+<li>課題の内容（改めて自分で<font color="#ff1493">簡単に</font>まとめる）</li>
+<li>計算に使用したプログラム（適宜省略可．<font color="#ff1493">簡単な</font>説明も付けた方が良い）</li>
+<li>計算結果のまとめ（入力と出力など）</li>
+<li>結果に対する考察（理論通り／異なる，予想通り／異なる，など）</li>
+<li>図や表を入れるとわかりやすいが，あまり凝り過ぎると，締め切りに間に合わ
+      なくなります．</li>
+</ul>
+
+
+<p>（数学とは関係のないことなので）レポートを作成するソフトウエアは，なんでも良い．例えば，WORD，PowerPoint，Googleドキュメントなどを使っても良い．<p>
+<p>しかし，せっかくの機会なので，LaTeX の利用を勧める．すでに，LaTeX を利用している人は，自分の使いやすい環境でレポートを作成して良い．</p>
+
+<p>利用経験のない人には，次が便利である．</p>
+<ul>
+<li>Cloud LaTeX (<a href="https://cloudlatex.io/" target="_blank" rel="noopener noreferrer">https://cloudlatex.io/</a>)</li>
+<li>Overleaf (<a href="https://ja.overleaf.com/" target="_blank" rel="noopener noreferrer">https://ja.overleaf.com/</a>)</li>
+</ul>
+
+<p>これらは，Web上ですべての作業ができるので，インストールは不要で，自分のPCはもちろん，どんな場所ででも利用できる．初心者には，Cloud LaTeXが便利であろう．UTOLの教材の中に，簡易的なLaTeXのマニュアルを用意した．適宜，活用してほしい．</p>
+
+
+<h3>参考書</h3>
+
+特に指定しませんが、以下が参考になります：
+<ul>
+<li>大槻純也，Pythonによる計算物理，森北出版，2023年</li>
+
+<li>
+岡本久，柳澤優香，Pythonを使った数値計算入門--数論から円周率、分子の拡散まで，近代科学社，2025年</li>
+
+<li>S. Linge and H. P. Langtangen, Programming for Computations---Python (2nd edition), Springer, 2020</li>
+
+<li>A. Quarteroni, F. Saleri, P. Gervasio, Scientific Computing with MATLAB and Octave (4th edition), Springer, 2014（加古孝，千葉文浩訳，MATLABとOctaveによる科学技術計算，丸善出版，2014年）</li>
+<li>齊藤宣一，数値解析入門 （大学数学の入門9），東京大学出版会，2012年</li>
+<li>齊藤宣一，偏微分方程式の計算数理，共立出版，2023年</li>
+</ul>
+
+
+
+
+<p></p>
+
+<div style="text-align: right">---「0. ガイダンス」はこれで終了---</div>
+
+</div>
+<!-- 本文ここまで -->
+
+<!-- highlight.jsの設定 ここから-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script>
+  // ハイライトを実行
+  hljs.initHighlightingOnLoad();
+</script>
+<!-- highlight.jsの設定 ここまで-->
+
+</body>
+</html>
