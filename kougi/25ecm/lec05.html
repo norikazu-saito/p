@@ -71,9 +71,7 @@
       \lambda\in\mathbb{C},\quad \boldsymbol{0}\ne\boldsymbol{v}\in\mathbb{C}^{n},\quad
       A\boldsymbol{v}=\lambda\boldsymbol{v}
       \]
-      を考察する．$\lambda_1,\ldots,\lambda_n\in\mathbb{C}$ を $A$ の固有値，
-      $\boldsymbol{v}_1,\ldots,\boldsymbol {v}_n$ を対応する固有ベクトルとする．
-      さらに，$|\lambda_1|\le|\lambda_2|\le\cdots \le |\lambda_n|$ と並べておく．</p>
+      を考察する．</p>
 
 
 
@@ -87,8 +85,8 @@
       1 & 1 & 4 & 2\\
       1 & 1 & 2 & 4
       \end{pmatrix}}$
-      を考える．絶対値最大の固有値は $\lambda_4=10$，（正規化された）固有ベクトルは，
-      $\displaystyle{\boldsymbol{v}_4
+      を考える．絶対値最大の固有値は $\lambda=10$，（正規化された）固有ベクトルは，
+      $\displaystyle{\boldsymbol{v}
       =\begin{pmatrix}
       2/\sqrt{10}\\
       2/\sqrt{10}\\
@@ -187,15 +185,17 @@ eigenvector
 
     <h2>冪乗法</h2>
 
+<p>$A$ の 固有値を$\lambda_1,\ldots,\lambda_n\in\mathbb{C}$，対応する固有ベクトルを $\boldsymbol{v}_1,\ldots,\boldsymbol {v}_n$ とする．さらに，$|\lambda_1|\le|\lambda_2|\le\cdots \le |\lambda_n|$ と並べておく．</p>
+
     <p>
-      $A$ に対して，次を仮定する：
+      そして，暫くの間（冪乗法と逆冪乗法の説明の間は）$A$ に対して，次を仮定する：
       \begin{equation}
       \tag{$\star$}
       |\lambda_1|
       \le \cdots \le
       |\lambda_{n-1}|<|\lambda_n| \quad \mbox{かつ}\quad A\mbox{ は対角化可能}.
       \end{equation} 
-      そして，<font color="#ff69b4">絶対値が最大の固有値</font> $\lambda_n$ を求める．（ただし，対角化可能性は説明の便宜上のものであり，それほど本質的ではない）</p>
+      そして，<font color="#ff69b4">絶対値が最大の固有値</font> $\lambda_n$ を求める．</p>
 
     <p>
       $\boldsymbol{x}\in\mathbb{C}^n$ を任意とし，
@@ -387,8 +387,8 @@ print(y)
  [3 4]]</pre>
         </div>
 
-        <p>もう一つ，$\displaystyle{\mbox{np.vdot(y,x)}=\langle \boldsymbol{x},\boldsymbol{y}\rangle=\sum_{i=1}^n
-          x_i\overline{y_i}}$ であることに注意せよ．
+        <p>もう一つ，<font color="#4169e1">np.vdot(y,x)$\displaystyle{=\sum_{i=1}^n
+          x_i\overline{y_i}}$</font> であることに注意せよ．
         </p>
 
         <div class="box">
@@ -751,8 +751,8 @@ $\displaystyle{\rho(A)\le \max_{1\le i\le n}\sum_{j=1}^n|a_{i,j}|}$ である．
   $\lambda\in\mathbb{C}$ と 
   $\boldsymbol{v}=(v_1,\ldots,v_n)^{\scriptsize \mbox{T}}\ne\boldsymbol{0}$ を，
 $|\lambda|=\rho(A)$，$A\boldsymbol{v}=\lambda\boldsymbol{v}$ を満たすものとして，$\displaystyle{|v_k|=\max_{1\le i\le n}|v_i|}$ とおく．$A\boldsymbol{v}=\lambda\boldsymbol{v}$ の第 $k$ 成分は，
-$\displaystyle{\lambda v_k=\sum_{j=1}^na_{kj}v_j}$　であり，したがって，
-$\displaystyle{|\lambda| \le \sum_{j=1}^n|a_{kj}|\frac{|v_j|}{|v_k|}\le \sum_{j=1}^n|a_{kj}|}$ が得られ，これより所望の不等式が従う．
+$\displaystyle{\lambda v_k=\sum_{j=1}^na_{k,j}v_j}$　であり，したがって，
+$\displaystyle{|\lambda| \le \sum_{j=1}^n|a_{k,j}|\frac{|v_j|}{|v_k|}\le \sum_{j=1}^n|a_{k,j}|}$ が得られ，これより所望の不等式が従う．
 この証明とほぼ同様の考察をすることで，より精密な固有値の存在範囲を求める次の定理（例えば，[齊藤2012]の定理5.1.1）が証明できる．</p>
 
 <p><b>定理 5.3.（Gershgorin）</b> $A=(a_{i,j})\in\mathbb{C}^{n\times n}$ のすべての固有値は $\displaystyle{G=\bigcup_{i=1}^nG_{i}}$ の中に含まれる．
@@ -849,7 +849,7 @@ for i in range(iteration):
 
 <p>GoogleのPageRankは，1998年にSergey BrinとLawrence Pageによって開発されたアルゴリズムで，
 大雑把には「多くの重要なページからリンクされているページは重要である」という考えに基づいて，ウェブページの重要度を数値で評価するものである（[BP1998]，[PBMW1999]）．
-もちろん，現在では，PageRankのみでウェブページの重要度を評価しているわけではないが，現在でも複雑なアルゴリズムの一要素として現役である（ようです）．
+もちろん，現在では，PageRankのみでウェブページの重要度を評価しているわけではないが，現在でも複雑なアルゴリズムの一要素として現役である（そのようです）．
 </p>
 
 <p>$N$ 個のウェブページ $W_1,\ldots,W_N$ があるとする．PageRankにおける最も基本的な考え方は，各ウェブの重要度を表現する量 $p_1,\ldots,p_N$ を，
@@ -863,7 +863,7 @@ p_i=\sum_{j\in B_i}\frac{p_j}{|W_j|}\quad (i=1,\ldots,N)\tag{5.3}
 $|W_j|$ は $W_j$ が張っているリンクの総数である．
 </p>
 
-<p>以下，具体例で説明する．図5.2で示すようなウェブ全体のトイモデルを考える（[LM2006]の例）．矢印は，例えば，$W_1$ から $W_2$ にリンクが張られていることを意味する．そうすると，$W_2$ からはどのウェブページにもリンクが張られていない（例えば，PDFファイルなどが想定される）．グラフ理論ではこのような node を dangling node と呼ぶ．</p>
+<p>以下，具体例で説明する．図5.2で示すようなウェブ全体のトイモデル（おもちゃのようなモデル）を考える（[LM2006]の例）．矢印は，例えば，$W_1$ から $W_2$ にリンクが張られていることを意味する．そうすると，$W_2$ からはどのウェブページにもリンクが張られていない（例えば，PDFファイルなどが想定される）．グラフ理論ではこのような node を dangling node と呼ぶ．</p>
 
 <figure align="center">
     <img src="fig/page1.png" alt="図5.2" width="200">
@@ -914,10 +914,30 @@ p_1 \\ p_2 \\ p_3 \\ p_4 \\ p_5 \\ p_6
 \end{equation}
 </p>
 
-<p>したがって，成分が(5.1)と(5.2)を満たすベクトル $\boldsymbol{p}$ で，(5.4)を満たすものを求めれば良い．実際，この方程式は，$1$ が $H$ の固有値，$\boldsymbol{p}$ が対応する固有ベクトルと解釈できるので，固有値解法が使えそうである．しかし，そもそも，そのようなベクトルは本当に存在するであろうか？存在するとすれば，唯一であろうか？ 実際に方程式を解く前に，これらの疑問を解決しておかなければならない（$H$の固有値が $1$ というのは，このような $\boldsymbol{p}$ が存在すればの話である）．</p>
-  
+
+<p>したがって，成分が(5.1)と(5.2)を満たすベクトル $\boldsymbol{p}$ で，(5.4)を満たすものを求めれば良い．それに当たり，差し当たって次の疑問が湧く：
+<ul>
+  <li>(Q1): (5.4)を満たすベクトル $\boldsymbol{p}$ は一意的に存在するか？</li>
+  <li>(Q2): (5.4)をどうやって解くか？</li>
+</ul>
+</p>
+
+<p> まず，(Q1)について，$\boldsymbol{p}$ には明らかに定数倍の不定さがある．すなわち，$\boldsymbol{p}$ が解なら，任意の $0\ne c\in\mathbb{R}$ に対して $c\boldsymbol{p}$ も解となる．なお，この性質により，各成分が非負となるように $\boldsymbol{p}$ を求めておけば，適当に定数倍を調整することにより，(5.2)を実現することは簡単である（したがってこの点については，今後，言及しない）．存在については一旦保留する．次に，(Q2)について，(5.4)すなわち $(IーH)\boldsymbol{p}=\boldsymbol{0}$ は，特異行列 $IーH$ を係数行列とする連立一次方程式である（$IーH$ が正則
+  なら，自明な解 $\boldsymbol{p}=\boldsymbol{0}$ しか存在しないので，明らかに不適）．したがって，最小二乗解などをで解を求める必要がある．しかし，(5.4)をそのままで眺めると，これは，$1$ が $H$ の固有値，$\boldsymbol{p}$ が対応する固有ベクトルと解釈できるので，固有値解法が使えそうである．しかも，冪乗法を使えば，固有ベクトルが直接得られる．したがって，次の(C)が肯定的に確かめられれば，(Q1)と(Q2)は一挙に解決できることになる:
+<ul>
+  <li>(C): $H$ の絶対最大の固有値は $1$ のみである．しかもそれは単純固有値（固有方程式の根として重根ではない）である．したがって，固有ベクトル $\boldsymbol{p}$ は，定数倍の不定さを除けば一意に定まる．しかも，$\boldsymbol{p}$ の各成分は非負になる（そう採れる）．</li>
+</ul>
+</p>
+
+
+<p><b>注意. </b>
+冪乗法と逆冪乗法の説明では，絶対最大の（唯一の）固有値の重複度については，何も言及しなかった．それは，$A$ の対角化可能性を仮定していたためである．しかし，PageRankに現れる行列について，対角化可能性までを要請するのは難しい．</noframes>
+</p>
+
 <p>  
-しかし，その目的のためには，実は，行列 $H$ の第2列目の成分がすべて零であることは都合が悪い．これは，$W_2$ が dangling node であることに起因している．そこで，次のような細工をする．まず
+しかし，残念ながら，$H$ について(C)が成り立つことは保証されない．
+そこで，$H$ を少しずつ修正し，(C)が保証されるようにする．
+まず，$H$ の第2列目の成分がすべて零であることは都合が悪い．これは，$W_2$ が dangling node であることに起因している．
 \begin{equation}
 \boldsymbol{1}_n=
 \begin{pmatrix}
@@ -961,9 +981,9 @@ S=H+\frac{1}{6}\boldsymbol{1}_6\boldsymbol{a}^{\scriptsize \mbox{T}}
 \boldsymbol{p}=S\boldsymbol{p}
 \end{equation}
 を考える．
-この $H$ から $S$ への修正は，どこにもリンクが張られていないウェブページは，全ウェブに平等に寄与があると考えていることに対応している．しかし，これでもまだ，最初の疑問に答えることは難しい．もうひと工夫必要である．</p>
+この $H$ から $S$ への修正は，どこにもリンクが張られていないウェブページは，全ウェブに平等に寄与があると考えていることに対応している．しかし，これでもまだ，(C)を保証することは難しい．もうひと工夫必要である．</p>
 
-<p>つぎに，私達がウェブを閲覧する際には，目的を持ってリンクを辿っていくこともあるが，往々にして，無目的に適当に（ダラダラと）リンクを辿ることもある（こちらのほうが多い？）．なお，かつてはこの後者の状況を「ネットサーフィン」と表現していたが，かなり前に廃れてしまったようである．それはともかく，ランダムなネットサーフィンの効果を入れるために，パラメータ $0< \alpha < 1$ を導入して，
+<p>つぎに，私達がウェブを閲覧する際には，目的を持ってリンクを辿っていくこともあるが，往々にして，無目的に適当に（ダラダラと）リンクを辿ることもある（こちらのほうが多い？）．なお，かつてはこの後者の状況を「ネットサーフィン」と表現していたが，この言葉はかなり前に廃れてしまったようである．それはともかく，ランダムなネットサーフィンの効果を入れるために，パラメータ $0< \alpha < 1$ を導入して，
 \begin{equation}
 \tag{5.6}
 G
@@ -979,7 +999,7 @@ G
 グーグル行列 $G$ に対して，(5.7)を満たすベクトル $\boldsymbol{p}$ で成分が(5.1)と(5.2)を満たすものをGoogleのPageRankベクトルと呼ぶ．
 </p>
 
-<p>なぜ，このような細工をしたか？ それは，$H$ や $S$ よりも $G$ の方が有利な性質を持つからである．それを説明するために，まずは，次の一般的な事実を確認しよう．</p>
+<p>実はこの $G$ は(C)を満たす．それを説明するために，まずは，次の一般的な事実を確認しよう．</p>
 
 <p>$A\in\mathbb{R}^{n\times n}$ の各成分が非負であり，かつ，$A\boldsymbol{1}_n=\boldsymbol{1}_n$ （すなわち，各行の成分和がすべて $1$）を満たすならば，$A$ を確率行列（右確率行列）と言う．$1$ は確率行列 $A$ の固有値であり，対応する固有ベクトルは $\boldsymbol{1}_n$ である．一方で，定理5.2より，$\rho(A)\le 1$なので，これらを合わせると，$\rho(A)=1$ であることがわかる．すなわち，$1$ は確率行列の固有値のうち絶対値が最大になるものである．</p>
 
@@ -1029,42 +1049,40 @@ A_2=\begin{pmatrix}
 上の $\mathcal{G}(A_1)$ は強連結，$\mathcal{G}(A_2)$ は強連結ではない．実際，$\mathcal{G}(A_2)$ は
 $\mathrm{P}_{2}$ から
 $\mathrm{P}_{1}$ へ到達するパスが存在しない．
-そして，行列 $A$ に対して，対応する有向グラフ $\mathcal{G}(A)$ が強連結のとき，$A$ は既約行列 (irreducible matrix)であると言う．上の $A_1$ は既約行列，$A_2$ は既約行列ではない（それを可約行列と言う）．ここまでの準備を経てやっと次を述べられる．</p>
+そして，行列 $A$ に対して，対応する有向グラフ $\mathcal{G}(A)$ が強連結のとき，$A$ は既約行列 (irreducible matrix)であると言う．上の $A_1$ は既約行列，$A_2$ は既約行列ではない（それを可約行列と言う）．</p>
 
 
 <p><b>定理 5.4. (Perron-Frobenius)</b>
-$A\in\mathbb{R}^{n\times n}$ は各成分が非負でありかつ既約行列であるとする．このとき，$\rho(A)$ は $A$の単純固有値（固有方程式の根として重根ではない）であり，対応する固有ベクトルで各成分が正であるようななものが存在する．$\blacksquare$
+$A\in\mathbb{R}^{n\times n}$ は各成分が非負でありかつ既約行列であるとする．このとき，$\rho(A)$ は $A$の単純固有値であり，対応する固有ベクトルで各成分が正であるようななものが存在する．$\blacksquare$
 </p>
 
 
 <p>この定理については，例えば，[Varga2000]のTheorem 2.7を見よ．これより，確率行列 $A$ の転置行列 $A^{\scriptsize \mbox{T}}$ が，さらに既約行列ならば， $1$ は単純固有値であり，しかも対応する固有ベクトルで各成分が正なものが存在することがわかるのである．
-しかし，この定理では， $\rho(A)=|\lambda|$ 満たす（$\rho(A)$ 以外の）固有値 $\lambda\in\mathbb{C}$ の存在は排除できていない．
+しかし，この定理では， $\rho(A)=|\lambda|$ を満たす（$\rho(A)$ 以外の）固有値 $\lambda\in\mathbb{C}$ の存在は排除できていない．
 そこで，次を使う．
 </p>
 
 <p><b>定理 5.5. </b>
 $A\in\mathbb{R}^{n\times n}$ の各成分が正ならば（このとき，
-対応する有向グラフは強連結であり，したがって，$G$ は各成分が非負な既約行列となるのでPerron-Frobeniusの定理を適用できるが），
-$\rho(A)=|\lambda|$ 満たす $A$ の固有値 $\lambda\in\mathbb{C}$ は，$\lambda=\rho(A)$ のみである． 
+対応する有向グラフは強連結であり，したがって，各成分が非負な既約行列となるのでPerron-Frobeniusの定理を適用できるが），
+$\rho(A)=|\lambda|$ を満たす $A$ の固有値 $\lambda\in\mathbb{C}$ は，$\lambda=\rho(A)$ のみである． 
 $\blacksquare$
 </p>
 
-<p>この定理は，例えば，[Varga2000]のLemma 2.15（とDefinition 2.10）を見よ．証明は全然難しくないが，ここでは述べない．</p>
+<p>この定理は，例えば，[Varga2000]のLemma 2.15（とDefinition 2.10）を見よ．</p>
 
 <p>さて，これでやっと準備が整った．(5.5)で定義された行列 $S$ と(5.6)で定義された行列 $G$ の考察に戻ろう．
-  各々の転置行列 $S^{\scriptsize \mbox{T}}$ と $G^{\scriptsize \mbox{T}}$ は確率行列である（そうなるように構成した！）．したがって，その転置行列 $S$ と $G$ の絶対値最大の固有値は $1$ である．次に，
-  $G$ の各成分は正なので，対応する有向グラフは強連結であり，したがって，$G$ は各成分が非負であり既約行列であるのでPerron-Frobeniusの定理と定理5.5が適用できる．すなわち，$\lambda_1,\ldots,\lambda_6$ を $G$ の固有値とすると，
+  各々の転置行列 $S^{\scriptsize \mbox{T}}$ と $G^{\scriptsize \mbox{T}}$ は確率行列である（そうなるように構成した！）．したがって，$1$ は，その転置行列 $S$ と $G$ の絶対値最大の固有値である．次に，
+  $G$ の各成分は正なので，対応する有向グラフは強連結であり，したがって，$G$ は各成分が非負であり既約行列となる．結果的に，Perron-Frobeniusの定理と定理5.5が適用できる．すなわち，$\lambda_1,\ldots,\lambda_6$ を $G$ の固有値とすると，
   \begin{equation*}
   |\lambda_1|\le\cdots \le  |\lambda_5| < \lambda_6=\rho(G)=1, 
   \end{equation*}
-  かつ，$1$ は単純固有値で対応する固有ベクトルは（定数倍を調整すれば）各成分が正となる．つまり，
-  (5.7)を満たす $\boldsymbol{p}$ は確かに存在し（定数倍の不定さを除けば）一意である．したがって，
-  $\boldsymbol{p}^{(0)}$ を適当に選んだ上で，冪乗法を使って，
+  かつ，$1$ は単純固有値で対応する固有ベクトルは（定数倍を調整すれば）各成分が正となる．これで，$G$ が(C)の性質を持つことが確かめられた．したがって，あらためて，$\boldsymbol{p}^{(0)}$ を適当に選んだ上で，冪乗法を使って，
       \[
       \boldsymbol{q}^{(k)}=G\boldsymbol{p}^{(k)},\quad
       \boldsymbol{p}^{(k+1)}=\frac{1}{\|\boldsymbol{q}^{(k)}\|}\boldsymbol{q}^{(k)}\qquad (k=0,1,\ldots)
       \]
-とすれば，十分大きい $m$ に対して，$\boldsymbol{p}^{(m)}$ が (5.7)の解 $\boldsymbol{p}$ の十分良い近似値を与えることが期待されるし，実際，その期待が正しいことが数学的に保証されるのである．なお，$\boldsymbol{p}^{(0)}$ としては，各成分が正になるようなベクトルを採っておけば，$\boldsymbol{p}^{(k)}$ の各成分もも自然に正となる．また，各成分が正となるように $\boldsymbol{p}$ を求めておけば，適当に定数倍を調整することにより，(5.2)を実現することは簡単である（したがってこの点についてはこれまで言及しなかった）．</p>
+とすれば，十分大きい $m$ に対して，$\boldsymbol{p}^{(m)}$ が (5.7)の解 $\boldsymbol{p}$ の十分良い近似値を与えることが期待されるし，実際，その期待が正しいことが数学的に保証されているのである．なお，$\boldsymbol{p}^{(0)}$ としては，各成分が正になるようなベクトルを採っておけば，$\boldsymbol{p}^{(k)}$ の各成分も自然に正となる．</p>
   <p>しかしながら，$S$ は既約行列でないので（実際，到達できないノードの順序対がいくらでもある），このようなことは言えない．$H$については，そもそも，その転置が確率行列ではない．</p>
 
 
@@ -1225,7 +1243,7 @@ G&=\alpha S+(1-\alpha) \frac{1}{n}\boldsymbol{1}_n\boldsymbol{1}^{\scriptsize \m
 
 
 <p><b>注意. </b>
-行列の既約性のには同値な定義が複数ある．興味のある人は，[齊藤2012]を見よ．
+行列の既約性には同値な定義が複数ある．興味のある人は，[齊藤2012]を見よ．
 </p>
 
 
@@ -1241,8 +1259,7 @@ G&=\alpha S+(1-\alpha) \frac{1}{n}\boldsymbol{1}_n\boldsymbol{1}^{\scriptsize \m
 
   <h2>課題</h2>
 
-  <p>以下の課題は，冪乗法か逆冪乗法の利用を想定している．</p>
-
+  
   <h4>課題5.1</h4>
 
   <p>
@@ -1290,7 +1307,7 @@ G&=\alpha S+(1-\alpha) \frac{1}{n}\boldsymbol{1}_n\boldsymbol{1}^{\scriptsize \m
 
   <h4>課題5.3</h4>
 
-<p>図5.6に示すウェブのモデルに対して，各ウェブページの重要度をPageRankにより計算せよ．特に，$\alpha$ 変化させたときの重要度の順位付けの変化について調べよ．この場合，$0\le \alpha \le 1$ とする．</p>
+<p>図5.6に示すウェブのモデルに対して，各ウェブページの重要度をPageRankにより計算せよ．特に，$\alpha$ 変化させたときの重要度の順位付けの変化について調べよ．</p>
 
 <figure align="center">
     <img src="fig/page3.png" alt="図5.6" width="400">
@@ -1302,16 +1319,22 @@ G&=\alpha S+(1-\alpha) \frac{1}{n}\boldsymbol{1}_n\boldsymbol{1}^{\scriptsize \m
   <h2>参考文献</h2>
 
   <ul>
-    <li>[齊藤2012] 齊藤宣一，数値解析入門，東京大学出版会，2012年</li>
-    <li>[QSG2014] A. Quarteroni, F. Saleri, P. Gervasio, Scientific Computing with MATLAB and Octave (4th
-      edition), Springer, 2014（加古孝，千葉文浩訳，MATLABとOctaveによる科学技術計算，丸善出版，2014年）</li>
     <li>[BP1998] S. Brin and L. Page, 
     <!a href="https://research.google/pubs/archive/334.pdf" target="_blank" rel="noopener noreferrer">The Anatomy of a Large-Scale Hypertextual Web Search Engine</a>, Computer Networks and ISDN Systems, Vol. 30, Issues 1–7, 107–117, 1998</li>
+    
+    <li>[LM2006] A. N. Langville and C. D. Meyer, Google’s PageRank and Beyond: The Science of Search Engine Rankings, Princeton University Press, 2006.</li>
+   
+    <li>[室田・杉原2013] 室田一雄，杉原正顯，線形代数II，東京大学工学教程，丸善出版，2013年</li>
+    
     <li>[PBMW1999] L. Page, S. Brin, R. Motwani, T. Winograd, 
     <a href="http://ilpubs.stanford.edu:8090/422/" target="_blank" rel="noopener noreferrer">PageRank Citation Ranking: Bringing Order to the Web</a>, Technical Report. Stanford InfoLab., 1999</li>
-    <li>[LM2006] A. N. Langville and C. D. Meyer, Google’s PageRank and Beyond: The Science of Search Engine Rankings, Princeton University Press, 2006.</li>
+    
+    <li>[QSG2014] A. Quarteroni, F. Saleri, P. Gervasio, Scientific Computing with MATLAB and Octave (4th
+      edition), Springer, 2014（加古孝，千葉文浩訳，MATLABとOctaveによる科学技術計算，丸善出版，2014年）</li>
+   
+      <li>[齊藤2012] 齊藤宣一，数値解析入門，東京大学出版会，2012年</li>
+     
     <li>[Varga2000] R. S. Varga, Matrix Iterative Analysis (Springer Series in Computational Mathematics 27) , Springer, 2000.</li>
-    <li>[室田・杉原2013] 室田一雄，杉原正顯，線形代数II，東京大学工学教程，丸善出版，2013年</li>    
   </ul>
 
   <p> PageRank以外の固有値問題の具体的な応用例については[QSG2014]の6.1節を見よ．
@@ -1320,6 +1343,8 @@ G&=\alpha S+(1-\alpha) \frac{1}{n}\boldsymbol{1}_n\boldsymbol{1}^{\scriptsize \m
 
    
   <h2>付録：QR分解とQR法</h2>
+
+  <p>以下は，講義中には説明しません．</p>
 
   <p>$A\in\mathbb{R}^{n\times n}$ を，直交行列 $Q$ と上三角行列 $R$ を用いて，
     \begin{equation*}
@@ -1525,7 +1550,6 @@ for i in range(iteration):
     hljs.highlightAll();
   </script>
   <!-- highlight.jsの設定 ここまで-->
-  -->
 
 </body>
 
