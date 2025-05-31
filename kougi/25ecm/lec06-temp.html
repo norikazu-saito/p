@@ -369,7 +369,7 @@ plt.show()
 
 <figure align="center">
 <img src="fig/euler-err1.png" alt="図6.3" width="400">
-<figcaption>図6.3: <font color="#ffa500">Out [8]</font> 
+<figcaption>図6.3: <font color="#ffa500">Out [5]</font> 
 </figcaption>
 </figure>
 
@@ -802,7 +802,7 @@ $|u(t_{n+1})-U^*_{n+1}|$ の推定値として採用するのである．
 e_{n}\le  \varepsilon\frac{h_{n}}{T}
 \end{equation}
 を要請することにする．
-実際，$|u(t_{n+1})-U(t_{n+1})|$ は $e_{n+1}$ よりも小さいはずなので，こうしておけば十分であろう．
+実際，$|u(t_{n+1})-U(t_{n+1})|$ は $e_{n}$ よりも小さいはずなので，こうしておけば十分であろう．
 </li>
 
 <li>さて，はじめから，(6.11)が成立していれば，
@@ -997,7 +997,7 @@ def harmonic(t, u):
 
 N=100
 t0=0.0
-T=6.0
+T=5.0
 u0=np.array([1,0.0])
 
 h, t, u = heunvec(harmonic, t0, T, u0, N)
@@ -1015,7 +1015,7 @@ plt.show()
 
 <figure align="center">
 <img src="fig/harmonic1.png" alt="図6.6" width="450">
-<figcaption>図6.6: <font color="#ffa500">Out [9]</font> 
+<figcaption>図6.6: <font color="#ffa500">Out [10]</font> 
 </figcaption>
 </figure>
 

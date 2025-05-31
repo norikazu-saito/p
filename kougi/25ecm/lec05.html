@@ -126,7 +126,7 @@ print("eigenvectors\n",evect)
 print("eigenvalue\n",eval[0])
 print("eigenvector\n",evect[:,0])
   
-<font color="#ffa500">Out [3]:</font>
+<font color="#ffa500">Out [2]:</font>
 eigenvalues
  [10.  1.  5.  2.]
 eigenvectors
@@ -248,7 +248,7 @@ def power1(A, initial, tolerance):
   kmax = 100
   eval = np.array([])
   increment = np.array([])
-  evec = np.copy(init)
+  evec = np.copy(initial)
   k = 0
   x = initial / la.norm(initial, ord=2)
   muold = 0
@@ -601,7 +601,7 @@ def invpower1(A, initial, alpha, tolerance):
   kmax = 100
   eval = np.array([])
   increment = np.array([])
-  evec = np.copy(init)
+  evec = np.copy(initial)
   E = A - alpha * np.eye(A.shape[0])
   k = 0
   x = init / la.norm(init, ord=2)
@@ -1349,12 +1349,10 @@ G&=\alpha S+(1-\alpha) \frac{1}{n}\boldsymbol{1}_n\boldsymbol{1}^{\scriptsize \m
 
   <p>以下は，講義中には説明しません．</p>
 
-  <p>$A\in\mathbb{R}^{n\times n}$ を，直交行列 $Q$ と上三角行列 $R$ を用いて，
+  <p>$A\in\mathbb{R}^{n\times n}$ を，直交行列 $Q$ $(Q^{\scriptsize\mbox{T}}Q=QQ^{\scriptsize\mbox{T}}=I)$ と上三角行列 $R$ を用いて，
     \begin{equation*}
     A=QR
     ,\quad
-    Q^{\scriptsize\mbox{T}}Q=QQ^{\scriptsize\mbox{T}}=I,
-    \quad
     R=
     \begin{pmatrix}
     r_{1,1} & \cdots & r_{1,n}\\
