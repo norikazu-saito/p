@@ -308,7 +308,7 @@ for i in range(iteration):
       \]
       が満たされた時点で，これ以上反復を続けても数値が改善されないと判断して，計算を終了する．</p>
 
-    <p>技術的な注意を述べる．eval，increment，evec は，
+s    <p>技術的な注意を述べる．eval，increment，evec は，
       \[
       \mbox{eval}
       =\begin{pmatrix}
@@ -1232,10 +1232,10 @@ PageRankベクトル [0.10204101 0.13265339 0.11054444 0.26164256 0.18053382 0.2
 </p>
 
 <p><b>注意. </b>
-成り行き上，図5.2のウェブのトイモデルに対して説明したが，一般の場合も同様に考えれば良い．すなわち，$N$ 個のウェブページ $W_1,\ldots,W_N$ について，そのリンクの関係を表現した行列 $H\in\mathbb{R}^{n\times n}$ とdangling node に対応する成分のみ $1$，その他は $0$ であるようなベクトル $\boldsymbol{a}$ を作った後に，
+成り行き上，図5.2のウェブのトイモデルに対して説明したが，一般の場合も同様に考えれば良い．すなわち，$N$ 個のウェブページ $W_1,\ldots,W_N$ について，そのリンクの関係を表現した行列 $H\in\mathbb{R}^{N\times N}$ とdangling node に対応する成分のみ $1$，その他は $0$ であるようなベクトル $\boldsymbol{a}$ を作った後に，
 \begin{align*}
-S&=H+\frac{1}{n}\boldsymbol{1}_n\boldsymbol{a}^{\scriptsize \mbox{T}},\\
-G&=\alpha S+(1-\alpha) \frac{1}{n}\boldsymbol{1}_n\boldsymbol{1}^{\scriptsize \mbox{T}}_n
+S&=H+\frac{1}{N}\boldsymbol{1}_N\boldsymbol{a}^{\scriptsize \mbox{T}},\\
+G&=\alpha S+(1-\alpha) \frac{1}{N}\boldsymbol{1}_N\boldsymbol{1}^{\scriptsize \mbox{T}}_N
 \end{align*}
 とすれば良い．
 </p>
