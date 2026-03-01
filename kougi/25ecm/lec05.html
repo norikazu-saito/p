@@ -1006,74 +1006,23 @@ G
 <p>正方行列とその転置行列の固有値はすべて一致するので，確率行列 $A$ の転置行列 $A^{\scriptsize \mbox{T}}$ についても，$1$ は絶対値が最大になる固有値であることがわかる．しかし，その（代数的）重複度については何も情報がない．また，絶対値が最大になる固有値が $1$ のみであるかどうかもわからない．
 </p>
 
-<p>そこで，Perron-Frobeniusの定理を利用する．この定理を述べる前に，少し長くなってしまうが，有向グラフの強連結性と行列の既約性の定義を復習しておく．確率行列とは限らない一般の $A = (a_{ij})\in\mathbb{R}^{n\times n}$（$A = (a_{ij})\in\mathbb{C}^{n\times n}$ でも良い）と，平面上の異なる $n$ 個の点 $\mathrm{P}_1, \mathrm{P}_2, \ldots, \mathrm{P}_n$ を考える．これらの点をノード（node）と呼ぶ．
-$a_{ij}\ne 0$ のとき，ノード $\mathrm{P}_i$ からノード $\mathrm{P}_j$ へ向かう有向辺 $\overrightarrow{\mathrm{P}_i\mathrm{P}_j}$ を引く（図5.4を見よ）．このようにして，行列 $A$ に対し，それに対応する有向辺の集合 $\mathcal{G}(A)$ を構成できる．これを（有限の）有向グラフと呼ぶ．</p>
+<p>そこで，Perron-Frobeniusの定理を利用する．次に述べるのは，正値行列に対するPerronの定理である．</p>
 
-<figure align="center">
-    <img src="fig/g3.png" alt="図5.4" width="200">
-    <figcaption>図5.4：$\mathrm{P}_i$ から $\mathrm{P}_j$ へ向かう有向辺 </figcaption>
-  </figure>
-
-  <p>
-例えば，
-\begin{equation}
-A_1=\begin{pmatrix}
-0&0&1&1\\
-0&0&1&1\\
-1&1&0&0\\
-1&1&0&0
-\end{pmatrix},\qquad
-A_2=\begin{pmatrix}
-1&1\\
-0&3
-\end{pmatrix}
-\end{equation}
-に対しては，$\mathcal{G}(A_1)$ と $\mathcal{G}(A_2)$ は図5.5の通りである．</p>
-
-<figure align="center">
-  <div class="image-container">
-  <img src="fig/g2.png" alt="画像1" width="200">
-  <img src="fig/g1.png" alt="画像2" width="200">
-  </div>
-    <figcaption>図5.5：左が $\mathcal{G}(A_1)$，右が $\mathcal{G}(A_2)$</figcaption>
-  </figure>
-
-  <p>有向グラフが強連結（strongly connected）であるとは，任意のノードの順序対 $(\mathrm{P}_i, \mathrm{P}_j)$ に対して，隣接する有向辺からなる有向パス
-    \begin{equation}
-    \overrightarrow{\mathrm{P}_{l_0}\mathrm{P}_{l_1}},\quad
-  \overrightarrow{\mathrm{P}_{l_1}\mathrm{P}_{l_2}},\quad
-\cdots,\quad 
-  \overrightarrow{\mathrm{P}_{l_{r-1}}\mathrm{P}_{l_r}},\quad (l_0=i,\ l_r=j)
-\end{equation}
-が存在し，$\mathrm{P}_i$ から $\mathrm{P}_j$ へ到達できることをいう（このとき，このパスの長さは $r$ であると言う）．
-上の $\mathcal{G}(A_1)$ は強連結，$\mathcal{G}(A_2)$ は強連結ではない．実際，$\mathcal{G}(A_2)$ は
-$\mathrm{P}_{2}$ から
-$\mathrm{P}_{1}$ へ到達するパスが存在しない．
-そして，行列 $A$ に対して，対応する有向グラフ $\mathcal{G}(A)$ が強連結のとき，$A$ は既約行列 (irreducible matrix)であると言う．上の $A_1$ は既約行列，$A_2$ は既約行列ではない（それを可約行列と言う）．</p>
-
-
-<p><b>定理 5.4. (Perron-Frobenius)</b>
-$A\in\mathbb{R}^{n\times n}$ は各成分が非負でありかつ既約行列であるとする．このとき，$\rho(A)$ は $A$の単純固有値であり，対応する固有ベクトルで各成分が正であるようななものが存在する．$\blacksquare$
+<p><b>定理 5.4. (Perron)</b>
+$A\in\mathbb{R}^{n\times n}$ は各成分が正であるとする．このとき，次が成り立つ．
+<ol>
+<li>$\rho(A)$ は $A$の単純固有値である．</li>
+<li>$\rho(A)$ に対応する固有ベクトルで各成分が正であるようななものが存在する．</li>
+<li>$\rho(A)=|\lambda|$ を満たす $A$ の固有値 $\lambda\in\mathbb{C}$ は，$\rho(A)$ のみである．</li>
+</ol>
+$\rho(A)$ を $A$ のPerron根(Perron root)ということがある．$\blacksquare$
 </p>
 
 
-<p>この定理は有名である．例えば，[室田・杉原2013]の定理2.1，[山本2003]の定理2.4，[Varga2000]のTheorem 2.7などを見よ．これより，確率行列 $A$ の転置行列 $A^{\scriptsize \mbox{T}}$ が，さらに既約行列ならば， $1$ は単純固有値であり，しかも対応する固有ベクトルで各成分が正なものが存在することがわかるのである．
-しかし，この定理では， $\rho(A)=|\lambda|$ を満たす（$\rho(A)$ 以外の）固有値 $\lambda\in\mathbb{C}$ の存在は排除できていない．
-そこで，次を使う．
-</p>
+<p>証明は，例えば，[Meyer2023]の§8.2を見よ．より一般に各成分が非負の既約行列（その定義はここでは述べない）に対するPerron-Frobeniusの定理については，例えば，[室田・杉原2013]の定理2.1，[山本2003]の定理2.4，[Varga2000]のTheorem 2.7などを見よ．</p>
 
-<p><b>定理 5.5. </b>
-$A\in\mathbb{R}^{n\times n}$ の各成分が正ならば（このとき，
-対応する有向グラフは強連結であり，したがって，各成分が非負な既約行列となるのでPerron-Frobeniusの定理を適用できるが），
-$\rho(A)=|\lambda|$ を満たす $A$ の固有値 $\lambda\in\mathbb{C}$ は，$\lambda=\rho(A)$ のみである． 
-$\blacksquare$
-</p>
-
-<p>この定理は，例えば，[Varga2000]のLemma 2.15（とDefinition 2.10）を見よ．</p>
-
-<p>さて，これでやっと準備が整った．(5.5)で定義された行列 $S$ と(5.6)で定義された行列 $G$ の考察に戻ろう．
-  各々の転置行列 $S^{\scriptsize \mbox{T}}$ と $G^{\scriptsize \mbox{T}}$ は確率行列である（そうなるように構成した！）．したがって，$1$ は，その転置行列 $S$ と $G$ の絶対値最大の固有値である．次に，
-  $G$ の各成分は正なので，対応する有向グラフは強連結であり，したがって，$G$ は各成分が非負であり既約行列となる．結果的に，Perron-Frobeniusの定理と定理5.5が適用できる．すなわち，$\lambda_1,\ldots,\lambda_6$ を $G$ の固有値とすると，
+<p>これで準備が整った．(5.5)で定義された行列 $S$ と(5.6)で定義された行列 $G$ の考察に戻ろう．
+  各々の転置行列 $S^{\scriptsize \mbox{T}}$ と $G^{\scriptsize \mbox{T}}$ は確率行列である（そうなるように構成した！）．したがって，$1$ は，その転置行列 $S$ と $G$ の絶対値最大の固有値である．次に，$G$ の各成分は正なので，定理 5.4が適用できる．すなわち，$\lambda_1,\ldots,\lambda_6$ を $G$ の固有値とすると，
   \begin{equation*}
   |\lambda_1|\le\cdots \le  |\lambda_5| < \lambda_6=\rho(G)=1, 
   \end{equation*}
@@ -1083,7 +1032,8 @@ $\blacksquare$
       \boldsymbol{p}^{(k+1)}=\frac{1}{\|\boldsymbol{q}^{(k)}\|}\boldsymbol{q}^{(k)}\qquad (k=0,1,\ldots)
       \]
 とすれば，十分大きい $m$ に対して，$\boldsymbol{p}^{(m)}$ が (5.7)の解 $\boldsymbol{p}$ の十分良い近似値を与えることが期待されるし，実際，その期待が正しいことが数学的に保証されているのである．なお，$\boldsymbol{p}^{(0)}$ としては，各成分が正になるようなベクトルを採っておけば，$\boldsymbol{p}^{(k)}$ の各成分も自然に正となる．</p>
-  <p>しかしながら，$S$ は既約行列でないので（実際，到達できないノードの順序対がいくらでもある），このようなことは言えない．$H$については，そもそも，その転置が確率行列ではない．</p>
+  
+<p>しかしながら，$S$ については，このようなことは保証されない．$H$については，そもそも，その転置が確率行列ではない．</p>
 
 
 <p>それでは，実際に，図5.2のウェブのトイモデルに対して各ウェブページの重要度を計算してみよう．そのためには，<font color="#4169e1">In [3]:</font>で作った
@@ -1241,12 +1191,9 @@ G&=\alpha S+(1-\alpha) \frac{1}{N}\boldsymbol{1}_N\boldsymbol{1}^{\scriptsize \m
 </p>
 
 
-
 <p><b>注意. </b>
-行列の既約性には同値な定義が複数ある．興味のある人は，[齊藤2012]，
-[室田・杉原2013]，[山本2003]，[Varga2000]などを見よ．
+2026年3月1日に，定理5.4の周辺を少々修正しました．</noframes>
 </p>
-
 
 <h2>問題</h2>
 
@@ -1325,6 +1272,11 @@ G&=\alpha S+(1-\alpha) \frac{1}{N}\boldsymbol{1}_N\boldsymbol{1}^{\scriptsize \m
     
     <li>[LM2006] A. N. Langville and C. D. Meyer, Google’s PageRank and Beyond: The Science of Search Engine Rankings, Princeton University Press, 2006.</li>
    
+
+<li>[Meyer2023] Carl D. Meyer, Matrix Analysis and Applied Linear Algebra, Second Edition, 2023, Society for Industrial and Applied Mathematics (SIAM), 
+ISBN:978-1-61197-743-1, 
+eISBN:978-1-61197-744-8, <a href ="https://doi.org/10.1137/1.9781611977448" target = "_blank">https://doi.org/10.1137/1.9781611977448</a></li>
+
     <li>[室田・杉原2013] 室田一雄，杉原正顯，線形代数II，東京大学工学教程，丸善出版，2013年</li>
     
     <li>[PBMW1999] L. Page, S. Brin, R. Motwani, T. Winograd, 
