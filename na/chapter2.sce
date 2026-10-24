@@ -67,7 +67,7 @@ for k=1:kmax
     m=2*m; 
 end
 //
-res=[hvec,qvec,evec,pvec];
+	res=[hvec,qvec,evec,pvec];
 endfunction
 
 // 複合公式の収束の速さ（両対数グラフ）1 //使っていない？
@@ -97,7 +97,7 @@ function order_plot1(a,b,func,rule,Qex)
 h = []; err = []; kmax=7; m=4;
 //
 for k =1:kmax
-     m=m+4*k;
+     m=4+4*k;
      tmp = abs(Qex - rule(a,b,m,func));
       err = [err; tmp]; h = [h; (b-a)/m];
 end
@@ -110,7 +110,7 @@ a = gca();
 a.log_flags = "ll";
 xset('thickness',1); xgrid(color(128,128,128));  
 legend('(A)', '傾き4',4);
-xlabel("log h", "fontsize", 4); ylabel("log E_h", "fontsize", 4);
+xlabel("h", "fontsize", 4); ylabel("E_h", "fontsize", 4);
 //ファイル出力
 xs2pdf(0,"nc1.pdf");
 endfunction
@@ -119,7 +119,7 @@ endfunction
 function order_plot2(a,b,func,rule,Qex)
 h = []; err = []; kmax=7; m=5; 
 for k =1:kmax
-     m=m+3*k;
+     m=5+3*k;
      tmp = abs(Qex - rule(a,b,m,func));
       err = [err; tmp]; h = [h; (b-a)/m];
 end
@@ -133,7 +133,7 @@ a = gca();
 a.log_flags = "ll";
 xset('thickness',1); xgrid(color(128,128,128));  
 legend('(B)', '傾き4',4);
-xlabel("log h", "fontsize", 4); ylabel("log E_h", "fontsize", 4);
+xlabel("h", "fontsize", 4); ylabel("E_h", "fontsize", 4);
 //ファイル出力
 xs2pdf(0,"nc2.pdf");
 endfunction
@@ -153,7 +153,7 @@ a = gca();
 a.log_flags = "ll";
 legend('(C)',4);
 xset('thickness',1); xgrid(color(128,128,128));  
-xlabel("log h", "fontsize", 4); ylabel("log E_h", "fontsize", 4);
+xlabel("h", "fontsize", 4); ylabel("E_h", "fontsize", 4);
 //ファイル出力
 xs2pdf(0,"nc3.pdf");
 endfunction
